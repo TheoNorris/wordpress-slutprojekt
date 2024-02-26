@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 
-<?php
-// Include the hero section
-get_template_part('hero-section');
-?>
+
 
 <!-- CONTENT -->
 
