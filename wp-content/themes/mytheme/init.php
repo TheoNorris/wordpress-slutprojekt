@@ -22,15 +22,6 @@ function mytheme_enqueue(){
    /*  wp_enqueue_style('mystyle', $theme_directory . '/style.css');
     wp_enqueue_style('product-style', $theme_directory . './style/product_style.css', array('mystyle'), '1.0', 'all'); */
      wp_enqueue_script('app', $theme_directory . '/app.js');
-
-
-     //praka data ili variabli vo app vo javascript
-     $data = array();
-     $data['myoption'] = get_option('myoption');
-     $data['color'] = 'blue';
-     $data['name'] = 'Eleni';
-     $data['testDB'] = get_option('blogdescription');
-     wp_localize_script('app', 'myvariables', $data);
  }
 
 add_action('wp_enqueue_scripts', 'mytheme_enqueue');
@@ -39,7 +30,8 @@ function mytheme_init(){
     $menus = array(
         'huvudmeny' => 'huvudmeny' ,
         'cart-meny' => 'cart-meny' ,
-        'footer_menu_1' => 'Footer Menu 1',
+        'services' => 'services',
+        'assistance' => 'assistance',
         
     );
 register_nav_menus($menus);
