@@ -152,7 +152,7 @@ class Vite
         try {
 
             // set the asset path to the image.
-            $asset = 'src/img/' . ltrim($img, '/');
+            $asset = 'resources/img/' . ltrim($img, '/');
 
             // if we're not running hot, return the asset.
             return static::asset($asset);
@@ -197,13 +197,13 @@ function vite_enqueue()
      Vite::enqueue_module();
 
      // register theme-style-css
-     $filename = Vite::asset('resources/styles/app.scss');
+     $filename = Vite::asset('resources/scss/app.scss');
 
      // enqueue theme-style-css into our head
      wp_enqueue_style('theme-styles', $filename, [], null, 'screen');
 
      // register theme-script-js
-     $filename = Vite::asset('resources/scripts/app.js');
+     $filename = Vite::asset('resources/js/app.js');
 
      // enqueue theme-script-js into our head (change false to true for footer)
      wp_enqueue_script('theme-scripts', $filename, [], null, false);
