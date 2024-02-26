@@ -10,8 +10,8 @@ function init_ajax(){
 add_action("init", "init_ajax");
 
 function mytheme_enqueue_scripts(){
-    wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/scripts/jquery.js", array(), false, array());
-    wp_enqueue_script("mytheme_ajax", get_template_directory_uri() . "/resources/scripts/ajax.js", array("mytheme_jquery"), false, array());
+    wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/js/jquery.js", array(), false, array());
+    wp_enqueue_script("mytheme_ajax", get_template_directory_uri() . "/resources/js/ajax.js", array("mytheme_jquery"), false, array());
 
     wp_localize_script("mytheme_ajax", "ajax_variabels", array(
         "ajaxUrl" => admin_url("admin-ajax.php"),
