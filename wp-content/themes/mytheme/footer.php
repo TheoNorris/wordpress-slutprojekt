@@ -1,12 +1,14 @@
 <footer>
     <div class="footer-container">
+        <div class="footer-menu-container">
         <div class="logo-div">
             <a href="/">
                 <img src="<?=get_template_directory_uri() . '/assets/images/logo.png';?>" alt="logo">
             </a>
                 <p>We are a residential interior design firm located in Portland. Our boutique-studio offers more than</p>
-                <div class="services-div">
-                    <h4>Services</h4>
+        </div>
+        <div class="services-div">
+            <h4>Services</h4>
                     <?php
                     $menu = array(
                         'theme_location' => 'services',

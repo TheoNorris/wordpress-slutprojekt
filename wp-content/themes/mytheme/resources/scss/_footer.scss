@@ -1,0 +1,51 @@
+footer {
+  font-size: 14px;
+  font-weight: 300;
+  background-color: $primary_text_color;
+  color: white;
+  padding: 2% 0;
+  letter-spacing: 1px;
+
+  .footer-container {
+    margin: $general-margin;
+
+    .footer-menu-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .logo-div {
+        width: 42%;
+
+        p {
+          font-weight: 500;
+        }
+      }
+      div {
+        width: 29%;
+
+        h4 {
+          margin-top: 0;
+          font-weight: 600;
+        }
+        div {
+          width: 100%;
+          ul {
+            padding: 0;
+
+            li {
+              line-height: 32px;
+              a {
+                color: white;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+      .services-div {
+        margin: 0 8%;
+      }
+    }
+  }
+}

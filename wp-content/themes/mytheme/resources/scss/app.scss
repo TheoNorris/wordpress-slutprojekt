@@ -1,7 +1,5 @@
-@font-face {
-  font-family: "SF Display Pro";
-  src: url("../../assets/fonts/sfprodisplay.ttf") format("truetype");
-}
+@import url("https://v1.fontapi.ir/css/SFProDisplay:100;200;300;400;500;600;700;800;900");
+
 @import "./variables";
 @import "./layout";
 @import "./header";
