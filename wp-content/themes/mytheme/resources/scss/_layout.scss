@@ -1,10 +1,18 @@
-body {
-  background-color: $background_color;
+<<<<<<< Updated upstream body {
   font-family: "SF Pro Display", sans-serif;
+  background-color: $background_color;
   width: auto;
   margin: 0;
   overflow-x: hidden;
   .content {
     margin: $general-margin;
   }
+
+  li {
+    list-style: none;
+  }
+}
+
+* {
+  text-decoration: none;
 }

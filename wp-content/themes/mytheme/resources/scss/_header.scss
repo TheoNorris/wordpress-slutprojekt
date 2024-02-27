@@ -1,18 +1,21 @@
 .header{
     background-color: $background_color;
-    width: 100%;
+   /*  width: 100%; */
     display: flex;
     justify-content:space-evenly; 
     height: 88px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+   /*  padding-top: 16px;
+    padding-bottom: 16px; */
     gap: 32px;
+    margin: $general-margin;
 
     .left_head{
         width: 50%;
         display: flex;
-        justify-content: space-around;
+        justify-content:space-between;
+        padding-right: 7%;
         .logo{
+            width: 20%;
             display: flex;
             justify-content: center;
             align-items: center;
