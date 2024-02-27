@@ -50,4 +50,10 @@
           <!--   <button class="hamburger">&#9776;</button>      -->
         </div>
         </div>
+
+        
     </header>
+    <div class="subheader">
+        <?php echo do_shortcode('[woocommerce_category_subheader_navigation]'); ?>
+        
+        </div>
