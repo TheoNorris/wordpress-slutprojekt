@@ -22,3 +22,5 @@ function woocommerce_button_proceed_to_checkout() {
         }
         return $needs_shipping;
     }
+
+
