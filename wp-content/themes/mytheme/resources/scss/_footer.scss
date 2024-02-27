@@ -15,14 +15,14 @@ footer {
       justify-content: space-evenly;
 
       .logo-div {
-        width: 42%;
+        width: 44%;
 
         p {
           font-weight: 500;
         }
       }
       div {
-        width: 29%;
+        width: 28%;
 
         h4 {
           margin-top: 0;
@@ -45,6 +45,12 @@ footer {
       }
       .services-div {
         margin: 0 8%;
+      }
+    }
+    .social-div {
+      margin: 3% 0;
+      a {
+        margin: 0 10px;
       }
     }
   }
