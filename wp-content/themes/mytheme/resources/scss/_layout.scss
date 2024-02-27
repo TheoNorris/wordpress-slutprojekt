@@ -1,25 +1,10 @@
-<<<<<<< Updated upstream
 body {
+  background-color: $background_color;
   font-family: "SF Pro Display", sans-serif;
-  background-color: aqua;
-
-  li {
-    list-style: none;
+  width: auto;
+  margin: 0;
+  overflow-x: hidden;
+  .content {
+    margin: $general-margin;
   }
 }
-
-* {
-  text-decoration: none;
-}
-=======
-body{
-    background-color: $background_color;
-    width: auto;
-    margin:0;
-    overflow-x: hidden;
-    .content {
-        margin: $general-margin;
-       
-      }
-}
->>>>>>> Stashed changes
