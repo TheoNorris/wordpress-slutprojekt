@@ -23,3 +23,5 @@ function enqueue_woocommerce_scripts() {
         wp_enqueue_script('wc-add-to-cart-variation');
     }
 }
+
+

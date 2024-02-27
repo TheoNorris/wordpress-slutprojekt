@@ -12,8 +12,17 @@
 <body>
     
     <?php wp_body_open(); ?>
-    <header class="<?php echo is_front_page() ? 'home-header' : ''; ?>">
-
+    <header class="header">
+    <div class="left_head">
+    <div class="logo">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo_black.png'; ?>" alt="Logo">
+    </div>
+    <div class="search_input">
+      	
+    <?php echo do_shortcode('[live_search]'); ?>
+    </div>
+    </div>
+    <div class="right_head">
         <div class="column-51">
             <!-- SHOWS THE PRIMARY MENU -->
             <?php 
@@ -39,5 +48,6 @@
             
             wp_nav_menu($menu); ?>    
           <!--   <button class="hamburger">&#9776;</button>      -->
+        </div>
         </div>
     </header>
