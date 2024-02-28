@@ -50,8 +50,15 @@ if ( woocommerce_product_loop() ) {
 
 	?>
 
-	<div class="product-holder-listing">
+	<div class="products-filters-div">
 
+	<div class="filters-holding-div">
+		<?php
+			echo do_shortcode('[wcapf_form]');
+		?>
+	</div>
+
+	<div class="product-holder-listing">
 	<?php
 
 	/**
@@ -103,6 +110,8 @@ if ( woocommerce_product_loop() ) {
 ?>
 </div>
 </div>
+</div>
+
 
 <?php
 

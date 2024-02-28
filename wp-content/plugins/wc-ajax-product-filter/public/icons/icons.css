@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?0cbf9ceefc3145abe883b9b541c42c0b?#iefix") format("embedded-opentype"),
+url("./icons.woff2?0cbf9ceefc3145abe883b9b541c42c0b") format("woff2"),
+url("./icons.woff?0cbf9ceefc3145abe883b9b541c42c0b") format("woff"),
+url("./icons.ttf?0cbf9ceefc3145abe883b9b541c42c0b") format("truetype"),
+url("./icons.svg?0cbf9ceefc3145abe883b9b541c42c0b#icons") format("svg");
+}
+
+i[class^="wcapf-icon-"]:before, i[class*=" wcapf-icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wcapf-icon-star-empty:before {
+    content: "\f101";
+}
+.wcapf-icon-star-full:before {
+    content: "\f102";
+}
+.wcapf-icon-star-half:before {
+    content: "\f103";
+}

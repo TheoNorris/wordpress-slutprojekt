@@ -1,0 +1,523 @@
+# Copyright (C) 2023 wptools.io
+# This file is distributed under the GPL v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WCAPF - WooCommerce Ajax Product Filter 4.2.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/wc-ajax-product-filter-dev\n"
+"POT-Creation-Date: 2023-08-26 18:38:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: includes/class-wcapf-admin.php:48
+msgid "Add Filters"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:58 includes/class-wcapf-admin.php:115
+msgid "Settings"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:75
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:114
+msgid "WCAPF - WooCommerce Ajax Product Filter - Settings"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:158
+msgid "Forms"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:145
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:150
+#: includes/class-wcapf-api-utils.php:385
+#: includes/class-wcapf-default-data.php:127
+msgid "Price"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:155
+msgid "Rating"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:160
+msgid "Product Status"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:165
+msgid "Post Author"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:170
+msgid "Post Meta"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:174
+msgid "Keyword"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:179
+msgid "Sort By"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:185
+msgid "Per Page"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:195
+#: includes/class-wcapf-form-filters-utils.php:150
+#: includes/shortcodes/class-wcapf-active-filters-shortcode.php:26
+msgid "Active Filters"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:200
+msgid "Reset Button"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:205
+msgid "Results Count"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:301
+#: includes/class-wcapf-default-data.php:230
+msgid "Featured"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:305
+#: includes/class-wcapf-default-data.php:234
+msgid "On Sale"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:337
+msgid "Post ID"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:341
+msgid "Author"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:345
+msgid "Title"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:349
+msgid "Name (Post Slug)"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:353
+#: includes/class-wcapf-api-utils.php:417
+msgid "Date"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:357
+msgid "Modified"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:361
+msgid "Parent ID"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:365
+msgid "Random Order"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:369
+msgid "Review Count"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:373
+msgid "Menu Order"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:377
+msgid "Total Sales"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:381
+msgid "Average Rating"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:389
+msgid "Meta Value"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:407
+msgid "Alphabetic"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:412
+msgid "Numeric"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:422
+msgid "DateTime"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:427
+msgid "Decimal"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:117
+msgid "Category"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:163
+msgid "Any"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:214
+msgid "Tag"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:224
+msgid "Status"
+msgstr ""
+
+#: includes/class-wcapf-field-instance.php:276
+msgid "Default"
+msgstr ""
+
+#: includes/class-wcapf-field-instance.php:282
+msgid "All Items"
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:322
+msgid "This is a reserved key. Please use a different string."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:345
+msgid "Post type name can't be used as a filter key, it'll create conflict."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:350
+msgid "Taxonomy name can't be used as a filter key, it'll create conflict."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:355
+msgid "Please make it unique by adding an underscore."
+msgstr ""
+
+#: includes/class-wcapf-form.php:78
+msgid ""
+"The form is empty. Please add some filters by editing the form <a "
+"href=\"%s\">here</a>."
+msgstr ""
+
+#: includes/class-wcapf-form.php:90
+msgid "Edit form"
+msgstr ""
+
+#: includes/class-wcapf-form.php:434
+msgid "Search products"
+msgstr ""
+
+#: includes/class-wcapf-frontend-scripts.php:216
+msgid "No options to choose"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:188
+msgid "Today"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:189
+msgid "Yesterday"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:190
+msgid "This week"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:191
+msgid "Last week"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:192
+msgid "This month"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:193
+msgid "Last month"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:194
+msgid "Last 14 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:195
+msgid "Last 30 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:196
+msgid "Last 90 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:197
+msgid "This year"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:198
+msgid "Last year"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:777
+msgid "No results for:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:787
+msgid "N/A"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:796
+msgid "Sort by:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:805
+msgid "Keyword:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:815 includes/class-wcapf-helper.php:853
+msgid "Filters"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:859
+msgid "Clear All"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:864
+msgid "Reset"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:874
+msgid "Submit"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:884
+msgid "Apply"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:1112
+msgid ""
+"WCAPF - WooCommerce Ajax Product Filter version %s requires WCAPF - "
+"WooCommerce Ajax Product Filter Pro version %s or higher, but you are using "
+"%s. The Pro version is currently NOT RUNNING. <a href=\"%s\" "
+"target=\"_blank\">Please proceed with the update</a>."
+msgstr ""
+
+#: includes/class-wcapf-walker.php:850
+msgid "Expand/Collapse %s"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:951
+msgid "Search"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:986
+msgid "+ Show more"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:991
+msgid "− Show less"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:998
+msgid "Show/hide all options"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:81
+msgid "Sample form"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:111
+msgid "Nonce verification failed"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:124
+msgid "Permission denied"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:141
+#: includes/hooks/class-wcapf-api.php:388
+#: includes/hooks/class-wcapf-api.php:790
+msgid "Invalid form id"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:783
+msgid "Form deleted successfully"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:786
+msgid "There was a problem deleting the form, please try again."
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:809
+msgid "Filter deleted successfully"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:812
+msgid "There was a problem deleting the filter, please try again."
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:816
+msgid "Invalid filter id"
+msgstr ""
+
+#: includes/hooks/class-wcapf-rating-filter.php:150
+msgid "%d star"
+msgid_plural "%d stars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/migration/class-wcapf-v4-migration.php:407
+msgid "Default form"
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:61
+msgid "No forms found. <a href=\"%s\">Create a form here</a>."
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:78
+msgid ""
+"The form has already been displayed and cannot be shown again. Upgrade to "
+"the <a href=\"%s\" target=\"_blank\">Pro version</a> for the ability to use "
+"multiple forms on a page."
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:96
+msgid ""
+"The free version of the plugin does not support filtering products on "
+"singular pages. Upgrade to the <a href=\"%s\" target=\"_blank\">Pro "
+"version</a> to unlock this feature."
+msgstr ""
+
+#: includes/widgets/class-wcapf-filter-widget.php:23
+msgid "Display a form to filter products in your store."
+msgstr ""
+
+#: includes/widgets/class-wcapf-filter-widget.php:60
+msgid ""
+"No settings are required! The form will be displayed according to the "
+"<b>Available on</b> setting."
+msgstr ""
+
+#: templates/menu-item-count.php:16
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] ""
+msgstr[1] ""
+
+#: wc-ajax-product-filter.php:122
+msgid ""
+"WCAPF - WooCommerce Ajax Product Filter requires WooCommerce. The plugin is "
+"currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:125
+msgid ""
+"%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It "
+"requires WooCommerce plugin to be activated. Please activate the "
+"WooCommerce plugin first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:133
+msgid ""
+"WCAPF - WooCommerce Ajax Product Filter requires WooCommerce version %s or "
+"higher, but WooCommerce version %s is used on the site. The plugin is "
+"currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:139
+msgid ""
+"%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It "
+"requires WooCommerce version %s or higher, but WooCommerce version %s is "
+"used on the site. Please upgrade the WooCommerce version first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:151
+msgid ""
+"WCAPF - WooCommerce Ajax Product Filter requires WordPress version %s or "
+"higher, but WordPress version %s is used on the site. The plugin is "
+"currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:157
+msgid ""
+"%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It "
+"requires WordPress version %s or higher, but WordPress version %s is used "
+"on the site. Please upgrade the WordPress version first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:169
+msgid ""
+"WCAPF - WooCommerce Ajax Product Filter requires PHP version %s or higher, "
+"but PHP version %s is used on the site. The plugin is currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:175
+msgid ""
+"%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It "
+"requires PHP version %s or higher, but PHP version %s is used on the site. "
+"Please upgrade the PHP version first ✌️ %s Back %s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WCAPF - WooCommerce Ajax Product Filter"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://wptools.io/wc-ajax-product-filter/?utm_source=plugins+listing&utm_"
+"medium=wcapf+free&utm_campaign=WCAPF+Pro+Details"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A plugin to filter WooCommerce products with AJAX request."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "wptools.io"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid ""
+"https://wptools.io?utm_source=plugins+listing&utm_medium=wcapf+free&utm_"
+"campaign=Business+Website"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:54
+msgctxt "Post type general name"
+msgid "Filters"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:66
+msgctxt "Post type general name"
+msgid "Filter Forms"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:55
+msgctxt "Post type singular name"
+msgid "Filter"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:67
+msgctxt "Post type singular name"
+msgid "Filter Form"
+msgstr ""

@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="icons" horiz-adv-x="32">
+    <font-face font-family="icons"
+      units-per-em="32" ascent="32"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="star-empty"
+      unicode="&#xF101;"
+      horiz-adv-x="32" d=" M32 19.592L20.944 21.199L16 31.217L11.056 21.199L0 19.592L8 11.794L6.111 0.783L16 5.982L25.889 0.783L24 11.794L32 19.592zM16 8.453L9.017 4.782L10.351 12.558L4.701 18.065L12.509 19.199L16.001 26.274L19.493 19.199L27.3 18.065L21.65 12.558L22.984 4.782L16.001 8.453z" />
+    <glyph glyph-name="star-full"
+      unicode="&#xF102;"
+      horiz-adv-x="32" d=" M32 19.592L20.944 21.199L16 31.217L11.056 21.199L0 19.592L8 11.794L6.111 0.783L16 5.982L25.889 0.783L24 11.794L32 19.592z" />
+    <glyph glyph-name="star-half"
+      unicode="&#xF103;"
+      horiz-adv-x="32" d=" M32 19.592L20.944 21.199L16 31.217L11.056 21.199L0 19.592L8 11.794L6.111 0.783L16 5.982L25.889 0.783L24 11.794L32 19.592zM16 8.453L15.971 8.438L16 26.275L19.492 19.2L27.299 18.066L21.649 12.559L22.983 4.783L16 8.454z" />
+  </font>
+</defs>
+</svg>
