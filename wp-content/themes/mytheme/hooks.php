@@ -22,4 +22,9 @@ function woocommerce_button_proceed_to_checkout() {
         return $needs_shipping;
     }
 
+    add_filter('woocommerce_breadcrumb_defaults', 'custom_change_breadcrumb_separator');
 
+    function custom_change_breadcrumb_separator($defaults) {
+        $defaults['delimiter'] = '<span> > </span>';
+        return $defaults;
+    }
