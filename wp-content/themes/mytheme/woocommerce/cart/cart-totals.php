@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
 							<label for="coupon_code" class="coupon_label"><?php esc_html_e( 'Discount code / Promo code', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Code', 'woocommerce' ); ?>" /> 
-							<label for="coupon_code" class="coupon_label"><?php esc_html_e( 'Discount code / Promo code', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter card number', 'woocommerce' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+							<label for="coupon_code" class="coupon_label"><?php esc_html_e( 'Your bonus card number', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter card number', 'woocommerce' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply', 'woocommerce' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
@@ -55,23 +55,38 @@ defined( 'ABSPATH' ) || exit;
 				<td data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
 		<?php endforeach; ?>
-
+				<!-- -----------------ESTIMATED SHIPPING ---------------------- -->
+				
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
-			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
+		<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
-			<?php wc_cart_totals_shipping_html(); ?>
+		<?php
+		$subtotal = WC()->cart->subtotal; // Get the cart subtotal
+		$shipping_cost_under_1000 = 79; // Shipping cost for prices under 1000 kr
+		$shipping_cost_over_1000 = 0; // Shipping cost for prices over 1000 kr
 
-			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+		if ($subtotal < 1000) {
+		// If subtotal is below 1000 kr, set the shipping cost accordingly
+		$shipping_cost_under_1000 = 79;
+	} else {
+	// If subtotal is 1000 kr or above, set free shipping
+	$shipping_cost_over_1000 = 0;
+	}
 
-		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
+		// Display shipping cost
+		echo '<tr class="shipping">';
+		echo '<th>' . esc_html__( 'Estimated Shipping & Handling', 'woocommerce' ) . '</th>';
+		echo '<td data-title="' . esc_attr__( 'Estimated Shipping ', 'woocommerce' ) . '">' . wc_price($subtotal < 1000 ? $shipping_cost_under_1000 : $shipping_cost_over_1000) . '</td>';
+		echo '</tr>';
+		?>
 
-			<tr class="shipping">
-				<th><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
-			</tr>
+		<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
 
 		<?php endif; ?>
+
+
+
 
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<tr class="fee">

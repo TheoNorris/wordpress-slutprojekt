@@ -25,3 +25,22 @@ function enqueue_woocommerce_scripts() {
 }
 
 
+
+
+add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
+add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');
+
+function update_cart_item_quantity() {
+    if (isset($_POST['cart_item_key']) && isset($_POST['new_quantity'])) {
+        $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+        $new_quantity = (int)$_POST['new_quantity'];
+
+        // Uppdatera varukorgen med den nya kvantiteten
+        WC()->cart->set_quantity($cart_item_key, $new_quantity);
+
+        // Ladda om varukorgen och rendera den på nytt
+        wc_get_template('cart/cart.php');
+    }
+    wp_die();
+}
+

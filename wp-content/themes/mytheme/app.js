@@ -15,4 +15,4 @@ function mytheme_getbyajax(searchwords) {
       error: function (xhr, status, error) {},
     });
   }
-  
+
