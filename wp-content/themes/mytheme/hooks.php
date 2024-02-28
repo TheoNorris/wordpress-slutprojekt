@@ -28,3 +28,15 @@ function woocommerce_button_proceed_to_checkout() {
         $defaults['delimiter'] = '<span> > </span>';
         return $defaults;
     }
+
+    add_filter( 'woocommerce_result_count', 'custom_result_count_text' );
+
+    function custom_result_count_text( $result_count ) {
+    // Get the total number of products
+    $total_products = WC()->query->found_posts;
+
+    // Replace the default text with custom text
+    $custom_text = sprintf( 'Selected products: %d', $total_products );
+    
+    return '<p class="woocommerce-result-count">' . $custom_text . '</p>';
+}

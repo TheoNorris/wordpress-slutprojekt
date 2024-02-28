@@ -29,7 +29,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
 <div class="favourites-button">
-<button class="favorite-button" data-product-id="<?php echo esc_attr( $product_id ); ?>">Add to Favorites</button>
+<button class="favorite-button" data-product-id="<?php echo esc_attr( $product_id ); ?>"><img src="<?=get_template_directory_uri() . '/assets/images/heart.png';?>" alt="heart"></button>
 </div>
 	<?php
 	/**
