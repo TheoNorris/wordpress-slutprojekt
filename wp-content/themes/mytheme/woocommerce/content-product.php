@@ -19,12 +19,18 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+// Get product ID
+$product_id = $product->get_id();
+
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
+<div class="favourites-button">
+<button class="favorite-button" data-product-id="<?php echo esc_attr( $product_id ); ?>">Add to Favorites</button>
+</div>
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.

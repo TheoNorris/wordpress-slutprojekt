@@ -5,6 +5,7 @@
 <!-- CONTENT -->
 
 <main class="content">
+    
     <?php the_title();?>
 
     <?php the_content(); ?>
