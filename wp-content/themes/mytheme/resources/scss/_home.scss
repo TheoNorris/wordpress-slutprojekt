@@ -223,60 +223,136 @@ main.content-frontpage{
        
     }
 }
-.subheader-navigation{
-    height: 40vh;
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-    ul{
-        padding: 5%;
-        height: 40px;
-        margin-top: 5%;
-        width: 93%;
-        
+
+/* ------------------------------------------------------------------------ */
+
+ /* ------------------------------------------------------------- */ 
+ 
+ .wp-block-columns-is-layout-flex  {
+    background-color: #FAFAFA;
+    padding: $general-margin;
+    padding-top: 0;
+   /*  margin-top: 2%; */
+    .cat_colum {
+        background-color: #EDEDED;
+        border-radius: 15px;
         display: flex;
-        justify-content:space-between;
-        flex-direction: row;
-       
-        li{
-           width: 10%;
-           height: 20vh;
-            border: 1px solid rgba(8, 8, 8, 0.5);
-            display: block;
-           
-             justify-content: center; 
-             align-items: center;
-            text-align: center;
-            background-color: #909090;
-          
-           
-            
-            img{
-                width: 24px;
-                height: 22px;
-                color: #100f0f;
-                margin-right: 10px;
-                margin-right: 50px;
-               
-               
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 38px 24px 38px;
+        figure{
+            margin: 0;
+        }
+        h4{
+            margin-top: 0;
+        }
+    }
+ }  
+ .brows_cat_h3{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 5%;
+    .wp-block-column{
+        .wp-block-buttons{
+            .wp-block-button{
+                background-color: transparent;
+                a{
+                    color: black;
+                    background-color: transparent;
+                }
             }
+        }
+    }
+ }
+
+
+ .new_arrivals{
+   /*  margin-left: 10%;
+    margin-right: 10%; */
+    height: 100vh;
+    padding: 10%;
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+
+        li.wc-block-grid__product{
+            flex: 1 0 calc(25% - 20px); 
+             background-color: #f6f6f6;
+       
+        padding: 54px 50px; 
+        padding-bottom: 10px;
+        box-sizing: border-box;
+            background-color: #f6f6f6;
+            border-radius: 16px;
+            box-sizing: border-box;
+          
             
             a{
-                display: flex; 
-                align-items: center;
-                text-align: center;
-                text-decoration: none;
-                color: #100f0f;
-                opacity: 50%;
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+                
+                margin-top: 10px;
+                margin-bottom: 10px;
+                .wc-block-grid__product-title{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    width: 100%;
+                    color: #211c24;
+                    text-align: center;
+                    height: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                }
+            }
+            .price{
+                height: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                .amount{
+                    font-weight: 600;
+                    font-size: 24px;
+                }
             }
             
-        }
-        /* Remove border from the last child */
-        /* li:last-child {
-            border-right: none;
-        } */
 
+        }
+        .wp-block-button{
+           /*  height: 50px; */
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #211c24;
+            background-color: #211c24;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+            a.add_to_cart_button{
+               background-color: transparent;
+               color: white;
+               font-weight: 600;
+               font-family: "SF Pro Display", sans-serif;
+               font-size: 14px;
+              
+               margin: 0;
+               
+               
+    
+            }
+        }
     }
+    
+ }
 }
-      
-}
+
+/* main.content-frontpage .new_arrivals ul li.wc-block-grid__product{
+    border: none;
+   margin: 0;
+   
+} */

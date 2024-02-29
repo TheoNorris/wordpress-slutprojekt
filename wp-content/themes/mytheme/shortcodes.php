@@ -38,6 +38,7 @@ function custom_woocommerce_category_subheader_navigation() {
 }
 add_shortcode('woocommerce_category_subheader_navigation', 'custom_woocommerce_category_subheader_navigation');
 
+
 /* function hero_section_shortcode($atts, $content = null) {
     return '<section class="small-banners">' . do_shortcode($content) . '</section>';
 }
