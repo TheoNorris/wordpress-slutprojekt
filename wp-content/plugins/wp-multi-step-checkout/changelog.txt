@@ -1,0 +1,220 @@
+== Changelog ==
+
+= 2.22 2022-05-10 =
+* Fix: add a "clear: both" element between the step tabs and the validation error messages, so they don't optically overlap
+* Fix: the Shipping section was missing on the Blocksy theme
+* Feature: option to place the minimum age fields from the Minimum Age for WooCommerce plugin in a separate step
+
+= 2.21 2022-07-07 =
+* Compatibility with the Botiga theme.
+* Feature: add the "wmsc_delete_step_by_category" filter
+* Tweak: place the login validation error messages under the step tabs
+
+= 2.20 2022-04-19 =
+* Fix: no new line was added when the Enter key was hit inside the "Order notes" field.
+* Feature: add common customizations to the assets/js/script.js file
+
+= 2.19 2022-01-04 =
+* Feature: add the "data-current-title" attribute to the steps
+* Fix: the Shipping section was missing on the Neve theme
+* Fix: the Order section was missing when the Elementor Pro Checkout widget was used on the checkout page
+
+= 2.18 2021-10-16 =
+* Fix: compatibility with the OceanWP theme
+* Fix: the multi-steps weren't loading if the "Fallback Modus" option from the Germanized plugin is enabled.
+* Fix: compatibility with the Local Pickup Plus plugin by SkyVerge
+
+= 2.17 2021-07-29 =
+* Compatibility with the themes by `fuelthemes`
+* Fix: move the "woocommerce-notices-wrapper" before the step tabs
+* Fix: move the script.min.js file in the footer. This avoids a JS error when the jQuery library is loaded twice. See the support topic: https://wordpress.org/support/topic/javascript-error-197/
+* Fix: the select2 was not initialized on the shipping country and shipping state fields
+
+= 2.16 2021-04-27 =
+* Fix: check if window.location.hash is defined before using it
+* Fix: missing steps content when the Avada Builder plugin is active
+
+= 2.15 2021-03-10 =
+* Tweak: add "wpmc-no-back-to-cart" CSS class
+* Fix: correct the "Show the Login step" message
+* Fix: increase the priority for the "woocommerce_locate_template" filter
+* Tweak: add "btn-color-primary" CSS class to the buttons under the WoodMart theme
+
+= 2.14 2021-01-14 =
+* Modify the plugin's name from WooCommerce Multi-Step Checkout to Multi-Step Checkout for WooCommerce
+
+= 2.13 2020-12-07 =
+* Add the "woocommerce_checkout_logged_in_message" filter
+* Fix: the Login section was misplaced in the Neve theme
+* Fix: replace the $text_domain with a string 
+* Test with PHP 8.0, WordPress 5.6, WooCommerce 4.8, jQuery 3.5.1
+
+= 2.12 2020-10-12 =
+* Fix: use "flex-end" instead of "right" for the navigation buttons
+* Test with WooCommerce 4.5
+
+= 2.11 2020-08-16 =
+* Fix: "Your Order" section under the Electro theme
+* Test with WooCommerce 4.4
+
+= 2.10 2020-07-08 =
+* Fix: sale badges were missing on the Astra theme
+* Fix: the "prev" and "next" buttons were present on the first and the last step if the theme was declaring a "display: inline-block !important" rule on the buttons
+* Fix: add function to load the default WooCommerce template files. Useful for conflicts with some themes. 
+* Compatibility with the Porto theme
+
+= 2.9.1 2020-05-05 =
+* Declare compatibility WooCommerce 4.1
+
+= 2.9 2020-03-12 =
+* Declare compatibility WooCommerce 4.0 
+* Declare compatibility WordPress 5.4 
+* Tweak: add `wmsc_buttons_class` filter for the buttons class
+
+= 2.8 2020-01-30 =
+* Declare compatibility WooCommerce 3.9
+* Fix: "prev" or "next" button wouldn't hide when necessary on theRetailer theme
+
+= 2.7 2019-12-31 =
+* Tweak: write navigation buttons with "flex" for a better responsible design
+
+= 2.6 2019-12-11 =
+* Fix: add CSS rule for a one-step checkout wizard
+* Fix: use "self" instead of "this" in the "wpmc_switch_tab" JS hook 
+* Fix: the coupon was showing on the Payment step instead of the Order step on the Bridge theme
+
+= 2.5.1 2019-11-05 =
+* Fix: product titles disappeared from the product category pages on the Astra theme
+
+= 2.5 2019-10-31 =
+* Fix: the "Your Order" section on Avada theme was hidden
+* Fix: the "Shipping" section on the Astra theme was missing
+* Fix: The "Your Order" section on the Shopper theme was not full width
+* Tweak: add an element with "clear:both" after the buttons, so they don't get covered with the next element
+
+= 2.4 2019-10-01 =
+* Feature: when opening the /checkout/ page, open a specific tab with the #step-1 URL hash
+* Fix: if "Ship to a different address?" not selected, don't switch tab to Shipping when an error is found
+* Fix: don't show server-side errors on the login step
+
+= 2.3 2019-07-14 =
+* Change steps order for RTL language websites
+* Fix: compatibility with the SendCloud plugin
+* Fix: add the `woocommerce_checkout_after_customer_details` hook also when the Shipping step is removed
+
+= 2.2 2019-06-06 =
+* Fix: the legal terms were showing twice with WooCommerce Germanized
+
+= 2.1 2019-05-30 =
+* Fix: the coupon form was not showing up
+* Show warning about an option in the German Market plugin
+
+= 2.0 2019-05-24 =
+* Warning: plugin incompatible with the Suki theme
+* Code refactory so to allow programatically to add/remove/modify steps
+
+= 1.20 2019-05-08 =
+* Fix small issues with the WooCommerce Germanized plugin
+* Declare compatibility with WordPress 5.2
+
+= 1.19 2019-04-27 =
+* Feature: compatibility with the WooCommerce Points and Rewards plugin 
+* Declare compatibility with WooCommerce 3.6
+* Tweak: update the Bootstrap library used in the admin side to 3.4.1 version
+
+= 1.18 2019-04-12 =
+* Fix: the "Your Order" section is squished in half a column on the Storefront theme
+* Fix: don't toggle the coupon form on the Avada theme
+* Fix: remove constantly loading icon from the Zass theme
+
+= 1.17 2019-02-24 =
+* Feature: add the "wpmc_before_switching_tab" and "wpmc_after_switching_tab" JavaScript triggers to the ".woocommerce-checkout" element
+* Fix: design error with WooCommerce Germanized and "Order & Payment" steps together
+* Fix: small design fixes for the Avada theme
+* Admin notice for "WooCommerce One Page Checkout" option for Avada theme 
+
+= 1.16.2 2019-02-18 =
+* Fix: PHP warnings when WooCommerce Germanized isn't installed
+
+= 1.16.1 2019-02-17 =
+* Fix: use the available strings from WooCommerce Germanized so the translation doesn't break
+
+= 1.16 2019-02-14 =
+* Fix: input fields for the Square payment gateway were too small
+* Fix: "load_text_domain" is loaded now in the "init" hook 
+* Fix: the steps were shown over the header if the header was transparent
+* Fix: adjust the checkout form template for the Avada theme
+* Fix: with Visual Composer the "next" and "previous" buttons weren't clickable on iPhone 
+* Fix: spelling errors in the nl_NL translation
+* Compatibility with the WooCommerce Germanized plugin
+
+= 1.15 2018-12-27 =
+* Tweak: show a warning about the "Multi-Step Checkout" option for the OceanWP theme
+* Compatibility with the WooCommerce Social Login plugin from SkyVerge
+* Add nl_NL, nl_BE, fr_CA, fr_BE, de_CH languages
+* Feature: option for the sign between two united steps. For example "Billing & Shipping"
+
+= 1.14 2018-12-04 =
+* Fix: set "padding:0" to the steps in order to normalize to all the themes
+* Fix: the "WooCommerce not installed" message was showing up even if WooCommerce was installed
+* Fix: small design changes for the Flatsome, Enfold and Bridge themes  
+* Fix: load the CSS and JS assets only on the checkout page
+
+= 1.13 2018-10-03 =
+* remove PHP notice when WPML option isn't enabled
+
+= 1.12 2018-09-06 =
+* New: the plugin is multi-language ready
+
+= 1.11 2018-07-28 =
+* Fix: warning for sizeof() in PHP >= 7.2
+* Fix: rename the CSS enqueue identifier
+* Tweak: rename the "Cheating huh?" error message
+
+= 1.10 2018-06-25 =
+* Fix: PHP notice for WooCommerce older than 3.0
+* Fix: message in login form wasn't translated
+
+= 1.9 2018-05-21 =
+* Change: add instructions on how to remove the login form
+* Fix: add the `woocommerce_before_checkout_form` filter even when the login form is missing
+* Compatibility with the Avada theme
+* Tweak: for Divi theme add the left arrow for the "Back to cart" and "Previous" button
+
+= 1.8 2018-03-31 =
+* Tweak: add minified versions for CSS and JS files
+* Fix: unblock the form after removing the .processing CSS class
+* Fix: hide the next/previous buttons on the Retailer theme 
+
+= 1.7 2018-02-07 =
+* Fix: keyboard navigation on Safari/Chrome
+* Fix: correct Settings link on the Plugins page
+* Fix: option for enabling the keyboard navigation
+
+= 1.6 2018-01-19 =
+* Fix: center the tabs for wider screens
+* Fix: show the "Have a coupon?" form from WooCommerce
+
+= 1.5 2018-01-18 =
+* Fix: for logged in users show the "Next" button and not the "Skip Login" button
+
+= 1.4 2017-12-18 =
+* Feature: allow to change the text on Steps and Buttons
+* Tweak: change the settings page appearance
+* Fix: change the "Back to Cart" tag from <a> to <button> in order to keep the theme's styling
+* Add French translation
+
+= 1.3 2017-12-05 =
+* Add "language" folder and prepare the plugin for internationalization
+* Add German translation
+
+= 1.2 2017-11-20 =
+* Fix: the steps were collapsing on mobile
+* Fix: arrange the buttons in a row on mobile
+
+= 1.1 2017-11-09 =
+* Add a Settings page and screenshots
+* Feature: scroll the page up when moving to another step and the tabs are out of the viewport
+
+= 1.0 2017-10-30 =
+* Initial commit

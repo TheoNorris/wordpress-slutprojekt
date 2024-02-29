@@ -15,12 +15,12 @@ function insertFilterHolder() {
     var filters = document.querySelector(".woocommerce-ordering");
     var results = document.querySelector(".woocommerce-result-count");
 
-    if (filters) {
-      filterHolder.appendChild(filters); // Clone the filters element
-    }
-
     if (results) {
       filterHolder.appendChild(results); // Clone the results element
+    }
+
+    if (filters) {
+      filterHolder.appendChild(filters); // Clone the filters element
     }
 
     var activeFilterItems = document.querySelector(

@@ -24,10 +24,14 @@
       flex-direction: row;
       margin-top: 5%;
 
+      .wcapf-active-filter-items {
+        margin-bottom: 1.5%;
+      }
+
       .filters-holding-div {
         min-width: 25%;
         margin-right: 5%;
-        margin-top: 1.5%;
+        margin-top: 1%;
 
         div {
           p {
@@ -46,6 +50,26 @@
               }
               ul li div label span {
                 color: #000000 !important;
+              }
+              .wcapf-search-box {
+                display: flex;
+
+                input {
+                  padding: 10px;
+                  padding-left: 20%;
+                  font-size: 14px;
+                  font-weight: 500;
+                  width: 100%;
+                  border-radius: 8px;
+                  border-color: #e1e1e1;
+                  background-color: #f5f5f5;
+                  border: 1px solid #f5f5f5;
+                  margin-bottom: 5%;
+                }
+                span {
+                  left: 5%;
+                  margin-bottom: 5%;
+                }
               }
               div {
                 .wcapf-range-start {

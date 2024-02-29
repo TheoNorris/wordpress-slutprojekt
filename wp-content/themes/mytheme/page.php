@@ -4,7 +4,7 @@
 
 <!-- CONTENT -->
 
-<main class="content">
+<main class="<?php echo is_checkout() ? 'content-checkout' : 'content'; ?>">
 
     <?php the_title();?>
 
