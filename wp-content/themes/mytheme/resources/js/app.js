@@ -1,24 +1,24 @@
 import "./listing";
 
 document.addEventListener("DOMContentLoaded", function () {
-  var contentElement = document.querySelector(".content");
+  /* var contentElement = document.querySelector(".content");
 
   if (contentElement) {
     // Loop through child nodes
     for (var i = 0; i < contentElement.childNodes.length; i++) {
       var node = contentElement.childNodes[i];
 
-      // Check if it's a text node and contains the text "Cart"
+      
       if (
         node.nodeType === Node.TEXT_NODE &&
-        node.textContent.trim() === "Cart"
+        (node.textContent.trim() === "Cart" || node.textContent.trim() === "Home")
       ) {
-        // Remove the node
+        
         contentElement.removeChild(node);
-        break; // Stop looping once "Cart" is found and removed
+        break; 
       }
     }
-  }
+  } */
 
     // Lyssna på klickhändelser för plus- och minusknapparna
     $(document).on('click', '.prqu_minus, .prqu_plus', function(event) {
@@ -74,4 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return total_price;
     }
+
+
+
+
+    /* document.querySelectorAll('.left .playstation .wp-block-media-text').forEach(function(element) {
+        element.style.removeProperty('grid-template-columns');
+    }); */
+    
 });
