@@ -32,5 +32,3 @@ function mytheme_getbyajax(){
 
 
 
-
-
