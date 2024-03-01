@@ -48,3 +48,16 @@ add_filter('woocommerce_breadcrumb_defaults', 'custom_change_breadcrumb_separato
         return $defaults;
     }
 
+
+    
+
+// Change text pon Home page on Add ti cart btn
+add_filter( 'woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text' );
+
+function custom_add_to_cart_text( $text ) {
+    if ( is_front_page() && $text === 'Add to cart' ) {     
+        $text = 'Buy Now';
+    }
+    return $text;
+}
+

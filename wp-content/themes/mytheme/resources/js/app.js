@@ -2,6 +2,10 @@ import "./listing";
 import "./checkout";
 
 document.addEventListener("DOMContentLoaded", function () {
+   
+
+
+
   /* var contentElement = document.querySelector(".content");
 
   if (contentElement) {
@@ -21,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   } */
 
-  // Lyssna på klickhändelser för plus- och minusknapparna
+  /* // Lyssna på klickhändelser för plus- och minusknapparna
   $(document).on("click", ".prqu_minus, .prqu_plus", function (event) {
     event.preventDefault(); // Förhindra standardbeteendet för knapparna
 
@@ -88,5 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Här kan du lägga till eventuella ytterligare avgifter eller fraktkostnader baserat på dina affärsregler
 
     return total_price;
-  }
+  } */
 });
