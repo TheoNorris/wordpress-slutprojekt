@@ -132,7 +132,7 @@ add_shortcode('custom_div_structure', 'custom_div_structure_shortcode');
 add_shortcode('live_search', 'live_search_function');
 function live_search_function() { ?>
 
-    <input type="text" name="keyword" id="keyword" onkeyup="fetch()"></input>
+    <input type="text" name="keyword" id="keyword" placeholder="Search" onkeyup="fetch()"></input>
 
     <div id="productfetch"></div>
 
@@ -163,7 +163,16 @@ function ajax_fetch() { ?>
             });
         }
     }
-
+    // Denna funktion visar productfetch när användaren börjar skriva
+    jQuery(document).ready(function() {
+            jQuery('#keyword').on('input', function() {
+                if (jQuery(this).val().length > 0) {
+                    jQuery('#productfetch').show();
+                } else {
+                    jQuery('#productfetch').hide();
+                }
+            });
+        });
 </script>
 <?php
 }
@@ -176,8 +185,19 @@ function product_fetch() {
 
     if( $the_query->have_posts() ) :
         while( $the_query->have_posts() ): $the_query->the_post(); ?>
-    
-    <h2><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></h2>
+    <div class="product-li">
+    <h3><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></h3>
+    <?php
+    // Hämta bild för produkten
+            $thumbnail_id = get_post_thumbnail_id();
+            $image_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail');
+            if ($image_url) {
+                ?>
+                <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title_attribute(); ?>">
+                <?php
+            }
+            ?> 
+            </div>
         <?php endwhile;
         wp_reset_postdata();
     endif;

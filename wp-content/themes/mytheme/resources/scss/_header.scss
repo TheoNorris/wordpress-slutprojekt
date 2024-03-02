@@ -30,12 +30,54 @@
 .search_input {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    position: relative;
+    #keyword{
+    
+    display: inline-block;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    background-color:#F5F5F5;
+    background-image: url('../images/Search.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px; 
+    font-size: 16px; 
+    width: 250px; 
+    }
+    #productfetch{
+        width: 44vw;
+        display: none;
+        position: absolute;
+        top: 70px;
+        /* display: block; */
+        /* background-color:transparent; */
+        background-color: #F5F5F5;
+        padding: 26px;
+        z-index: 100;
+        border-radius: 6px;
+        .product-li{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 20px;
+            h3{
+                align-self: center;
+                a{
+                    color: black;
+                }
+            }
+        }
+       
+    }
     
 }
 
 /* Style for the search input field */
-.search_input input[type="text"] {
+/* .search_input input[type="text"] {
     position: relative;
     display: inline-block;
     border: none;
@@ -47,18 +89,18 @@
     padding-left: 40px; 
     font-size: 16px; 
     width: 250px; 
-}
+} */
 
 /* Set the background image to the search icon */
 .search-input input[type="text"] {
-    /* Specify the path to your icon */
-    background-position: 10px 50%; /* Adjust icon position as needed */
+    
+    background-position: 10px 50%; 
     background-repeat: no-repeat;
 }
 
 
 .search-input input[type="text"]::placeholder {
-    color: #555; /* Adjust placeholder text color as needed */
+    color: #555; 
 }
 
     }
@@ -121,6 +163,10 @@
                 padding: 0;
                 a{
                     padding: 0;
+                    &:hover{
+                    transition: transform 0.5s ease-in-out; 
+                    transform: scale(1.1);
+                    }
                 }
              }
             }
@@ -137,7 +183,9 @@
           
       
           #primary-menu.menu li a:hover {
-            transform: scale(1.1); 
+            /* transform: scale(1.1);  */
+            transition: transform 0.5s ease-in-out; 
+                    transform: scale(1.1);
           
           }
 
@@ -186,6 +234,10 @@
                     text-decoration: none;
                     color: #F5F5F5;
                     opacity: 50%;
+                    &:hover{
+                    transition: transform 0.5s ease-in-out; 
+                    transform: scale(1.1);
+                    }
                 }
                 
             }
