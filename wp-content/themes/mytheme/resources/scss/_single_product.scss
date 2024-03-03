@@ -1,2 +1,110 @@
+.site-main{
+    .woocommerce-breadcrumb{
+        color: black;
+        font-weight: 500;
+        a, span{
+            opacity: 50%;
+        }       
+    }
+    .product{
+        margin-top: 5%;
+        .woo-variation-product-gallery{
+            margin-top: 5%;
+            height: 70vh;
+            .woo-variation-gallery-wrapper{
+                .woo-variation-gallery-container{
+                    .woo-variation-gallery-thumbnail-wrapper{
+                        /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap;
+    width: 100%; */
+                        /* height: 50vh; */
+                        .current-thumbnail{
+                            div{
 
+                                img{
+                                    /* height: 15vh;
+                                    width: 90px; */
+                                }
+                                &:last-child{
+                                   /*  width: 1vw; */
+                                }
+
+                            }
+                        }
+                        .wvg-gallery-thumbnail-image{
+                            div{
+                                /* height: 5vh; */
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        /* -------------------- */
+        .entry-summary{
+            /* width: 40%;
+            margin-right: 10%; */
+
+            height: 100%;
+            .variations_form{
+                .variations{
+                    
+                    tbody {
+                        tr {
+                          display: flex;
+                          flex-direction: column;
+            
+                          th.label {
+                            color: $secondary_text_color;
+                            
+                            min-width: 110px;
+                            text-align: left;
+                          }
+                          td.woo-variation-items-wrapper {
+                            display: flex;
+                            justify-content: left;
+                            a {
+                              margin: auto 15px;
+                              text-decoration: none;
+                              color: gray;
+                              font-weight: 400;
+                            }
+                            ul {
+                              width: 100%;
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: left;
+                              li {
+                                list-style: none;
+                                text-align: center;
+                                margin-right: 5px;
+            
+                                .variable-item-contents {
+                                    span{
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 50%;
+                                    }
+                                  height: 100%;
+                                  margin: auto;
+                                  display: flex;
+                                  justify-content: center;
+                                  align-items: center;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+
+                }
+            }
+        }
+    }
+
+}
 
