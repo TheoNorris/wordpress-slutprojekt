@@ -3,10 +3,111 @@ div.woocommerce-checkout:contains("Checkout") {
 }
 .woocommerce {
   .wpmc-steps-wrapper {
+    #checkout_coupon div {
+      display: none;
+    }
+
+    .woocommerce-checkout .wpmc-step-item #order_review table {
+      border: none;
+
+      thead,
+      tbody {
+        display: none;
+      }
+      tfoot {
+        .cart-subtotal,
+        .order-total {
+          display: none;
+        }
+        tr {
+          th,
+          td {
+            border: none;
+            padding: 0;
+          }
+          th {
+            display: none;
+          }
+          td ul {
+            margin-bottom: 15%;
+            li {
+              border: 1px solid #d1d1d8;
+              border-radius: 7px;
+              padding: 24px 0;
+              padding-left: 24px;
+              display: flex;
+              flex-direction: row;
+
+              input[type="radio"] {
+                appearance: none;
+                -webkit-appearance: none;
+                height: 17px;
+                width: 17px;
+                border-radius: 50%;
+                border: 1px solid black;
+                cursor: pointer;
+
+                &:checked {
+                  background-color: white;
+                  border-color: black;
+
+                  &::before {
+                    content: "";
+                    display: block;
+                    width: 11px;
+                    height: 11px;
+                    border-radius: 50%;
+                    background-color: black;
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+                }
+                &:checked + label {
+                  color: #000000;
+                }
+
+                &:not(:checked) + label {
+                  color: #a2a3b1;
+                }
+                &:checked + label bdi {
+                  color: #000000;
+                }
+
+                &:not(:checked) + label bdi {
+                  color: #a2a3b1;
+                }
+              }
+              label {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                margin-left: 1%;
+                width: 100%;
+                font-weight: 400;
+                font-size: 16px;
+                color: #a2a3b1;
+
+                &::after {
+                  content: ""; /* Empty content to hide the colon */
+                }
+
+                .woocommerce-Price-amount {
+                  margin-right: 2%;
+                  font-weight: 500;
+                  color: #a2a3b1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .woocommerce-shipping-fields {
       margin-top: 3%;
     }
-    .woocommerce-additional-fields div p span {
+    .woocommerce-additional-fields div p span textarea {
       padding: 15px;
     }
     .shipping_address {
@@ -101,6 +202,9 @@ div.woocommerce-checkout:contains("Checkout") {
     #wpmc-next {
       background-color: #000000;
       color: #fff;
+    }
+    button#wpmc-prev.current {
+      display: none !important;
     }
     #wpmc-back-to-cart {
       background-color: #fff;

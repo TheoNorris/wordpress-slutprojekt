@@ -61,7 +61,35 @@ function custom_add_to_cart_text( $text ) {
     return $text;
 }
 
+function modify_shipping_method_full_label($full_label, $method) {
+    // Modify the full label text as needed
+    $modified_full_label = str_replace(':', '', $full_label);
+    
+    // Return the modified full label
+    return $modified_full_label;
+}
+
+// Add filter hook to modify the shipping method full label
+add_filter('woocommerce_cart_shipping_method_full_label', 'modify_shipping_method_full_label', 10, 2);
 
 
+// Remove or modify placeholders for address fields
+function modify_checkout_address_fields($fields) {
+    // Unset placeholder values for address fields
+    foreach ($fields as $field_key => $field) {
+        if (isset($field['placeholder'])) {
+            $fields[$field_key]['placeholder'] = '';
+        }
+    }
+    return $fields;
+}
+add_filter('woocommerce_default_address_fields', 'modify_checkout_address_fields');
 
+function remove_checkout_email_default_value($value, $input) {
+    if ($input === 'billing_email') {
+        return '';
+    }
+    return $value;
+}
+add_filter('woocommerce_checkout_get_value', 'remove_checkout_email_default_value', 10, 2);
 
