@@ -155,18 +155,15 @@
             padding: 0;
             width: 100%;
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
             gap: 16px;
             margin: 0 auto;
-            justify-content: end;
 
             li {
               padding: 10px;
-              width: 25%;
-              flex-grow: 1;
               background-color: #f6f6f6;
               border-radius: 9px;
+              width: calc(31% - 12px);
 
               a {
                 display: flex;
@@ -179,6 +176,7 @@
                   color: $primary_text_color;
                   text-align: center;
                   margin: 20px 10px;
+                  min-height: 55px;
                 }
               }
               .product_type_simple {

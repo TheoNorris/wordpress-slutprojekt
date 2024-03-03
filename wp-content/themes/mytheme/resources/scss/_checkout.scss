@@ -1,3 +1,111 @@
 div.woocommerce-checkout:contains("Checkout") {
   display: none;
 }
+.woocommerce {
+  .wpmc-steps-wrapper {
+    .woocommerce-shipping-fields {
+      margin-top: 3%;
+    }
+    .woocommerce-additional-fields div p span {
+      padding: 15px;
+    }
+    .shipping_address {
+      padding: 0;
+
+      div p span #shipping_address_2 {
+        display: none;
+      }
+    }
+    form {
+      margin-top: 5%;
+      div div div {
+        margin-top: 3%;
+        background-color: #f5f5f5;
+        padding: 5% 10%;
+        border-radius: 7px;
+
+        p {
+          label {
+            color: #17183b;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 0.8%;
+            abbr {
+              display: none;
+            }
+          }
+          span {
+            #billing_address_2 {
+              display: none;
+            }
+            input {
+              padding: 10px;
+              padding-left: 25px;
+              font-size: 14px;
+              font-weight: 500;
+              width: 100%;
+              border-radius: 8px;
+              border-color: #e1e1e1;
+              background-color: #ffffff;
+              border: 1px solid #ffffff;
+              margin-bottom: 5%;
+            }
+            select {
+              font-size: 14px;
+              font-weight: 500;
+              width: 100%;
+              border-color: #e1e1e1;
+              background-color: #ffffff;
+
+              margin-bottom: 5%;
+              border-radius: 10px;
+              padding-top: 5%;
+            }
+            span span .select2-selection {
+              padding-bottom: 4%;
+              padding-top: 1%;
+              padding-left: 2%;
+              border: 1px solid #ffffff;
+
+              .select2-selection__arrow {
+                padding-top: 2.5%;
+                padding-right: 2%;
+              }
+
+              .select2-selection__rendered {
+                position: relative;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .wpmc-nav-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 5%;
+    button#wpmc-back-to-cart {
+      margin: 0;
+    }
+    .button {
+      margin: 0;
+      font-size: 16px;
+      font-size: 500;
+      border-radius: 6px;
+      padding: 20px;
+      width: 200px;
+    }
+    #wpmc-next {
+      background-color: #000000;
+      color: #fff;
+    }
+    #wpmc-back-to-cart {
+      background-color: #fff;
+      color: #000000;
+      border: 1px solid #000000;
+    }
+  }
+}
