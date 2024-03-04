@@ -158,48 +158,40 @@ foreach( $steps as $_id => $_step ) {
         do_action('wmsc_step_content_' . $_id);
     }
     if ( $_step['title'] === 'Payment' ) {
-        echo '<div class="order-summary">';
+    echo '<div class="order-summary">';
     
-                // Display Products
-        do_action( 'woocommerce_review_order_before_cart_contents' );
+    // Display Products
+    do_action( 'woocommerce_review_order_before_cart_contents' );
 
-        echo '<div class="order-products">';
-        echo '<h2>' . esc_html__( 'Products', 'woocommerce' ) . '</h2>';
-        echo '<table class="order-table">';
-        echo '<thead><tr><th>' . esc_html__( 'Product', 'woocommerce' ) . '</th><th>' . esc_html__( 'Price', 'woocommerce' ) . '</th></tr></thead>';
-        echo '<tbody>';
+    echo '<div class="order-products">';
+    echo '<h2> Summary </h2>';
 
-        foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-            $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+    $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 
-            if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-                ?>
-                <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-                    <td class="product-thumbnail">
-                        <?php
-                        $thumbnail = $_product->get_image( 'woocommerce_thumbnail' );
-                        if ( $thumbnail ) {
-                            echo wp_kses_post( $thumbnail );
-                        } else {
-                            echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
-                        }
-                        ?>
-                    </td>
-                    <td class="product-name">
-                        <?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '&nbsp;'; ?>
-                        <?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); ?>
-                        <?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
-                    </td>
-                    <td class="product-total">
-                        <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
-                    </td>
-                </tr>
-                <?php
-            }
+    if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+        echo '<div class="product-item">';
+        echo '<div class="product-thumbnail">';
+        
+        $thumbnail = $_product->get_image( 'woocommerce_thumbnail' );
+        if ( $thumbnail ) {
+            echo wp_kses_post( $thumbnail );
+        } else {
+            echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
+        }
+        
+        echo '</div>'; // Close product-thumbnail
+
+        echo '<div class="product-details">';
+        echo '<p class="product-name">' . wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '</p>';
+        echo '<p class="product-quantity"> <label>Qty:</label> ' . apply_filters( 'woocommerce_checkout_cart_item_quantity', sprintf( '%s', $cart_item['quantity'] ), $cart_item, $cart_item_key ) . '</p>';
+        echo '<p class="product-subtotal">' . apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) . '</p>';
+        echo '</div>'; // Close product-details
+
+        echo '</div>'; // Close product-item
+        }
         }
 
-        echo '</tbody>';
-        echo '</table>';
         echo '</div>'; // Close order-products div
 
     

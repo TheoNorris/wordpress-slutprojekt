@@ -7,97 +7,156 @@ div.woocommerce-checkout:contains("Checkout") {
       display: none;
     }
 
-    .woocommerce-checkout .wpmc-step-item #order_review table {
-      border: none;
+    .woocommerce-checkout .wpmc-step-item {
+      #order_review table {
+        border: none;
 
-      thead,
-      tbody {
-        display: none;
-      }
-      tfoot {
-        .cart-subtotal,
-        .order-total {
+        thead,
+        tbody {
           display: none;
         }
-        tr {
-          th,
-          td {
-            border: none;
-            padding: 0;
-          }
-          th {
+        tfoot {
+          .cart-subtotal,
+          .order-total {
             display: none;
           }
-          td ul {
-            margin-bottom: 15%;
-            li {
-              border: 1px solid #d1d1d8;
-              border-radius: 7px;
-              padding: 24px 0;
-              padding-left: 24px;
-              display: flex;
-              flex-direction: row;
+          tr {
+            th,
+            td {
+              border: none;
+              padding: 0;
+            }
+            th {
+              display: none;
+            }
+            td ul {
+              margin-bottom: 15%;
+              li {
+                border: 1px solid #d1d1d8;
+                border-radius: 7px;
+                padding: 24px 0;
+                padding-left: 24px;
+                display: flex;
+                flex-direction: row;
 
-              input[type="radio"] {
-                appearance: none;
-                -webkit-appearance: none;
-                height: 17px;
-                width: 17px;
-                border-radius: 50%;
-                border: 1px solid black;
-                cursor: pointer;
+                input[type="radio"] {
+                  appearance: none;
+                  -webkit-appearance: none;
+                  height: 17px;
+                  width: 17px;
+                  border-radius: 50%;
+                  border: 1px solid black;
+                  cursor: pointer;
 
-                &:checked {
-                  background-color: white;
-                  border-color: black;
+                  &:checked {
+                    background-color: white;
+                    border-color: black;
 
-                  &::before {
-                    content: "";
-                    display: block;
-                    width: 11px;
-                    height: 11px;
-                    border-radius: 50%;
-                    background-color: black;
-                    position: relative;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    &::before {
+                      content: "";
+                      display: block;
+                      width: 11px;
+                      height: 11px;
+                      border-radius: 50%;
+                      background-color: black;
+                      position: relative;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                    }
+                  }
+                  &:checked + label {
+                    color: #000000;
+                  }
+
+                  &:not(:checked) + label {
+                    color: #a2a3b1;
+                  }
+                  &:checked + label bdi {
+                    color: #000000;
+                  }
+
+                  &:not(:checked) + label bdi {
+                    color: #a2a3b1;
                   }
                 }
-                &:checked + label {
-                  color: #000000;
-                }
-
-                &:not(:checked) + label {
+                label {
+                  display: flex;
+                  flex-direction: row-reverse;
+                  justify-content: flex-end;
+                  margin-left: 1%;
+                  width: 100%;
+                  font-weight: 400;
+                  font-size: 16px;
                   color: #a2a3b1;
-                }
-                &:checked + label bdi {
-                  color: #000000;
-                }
 
-                &:not(:checked) + label bdi {
-                  color: #a2a3b1;
+                  &::after {
+                    content: ""; /* Empty content to hide the colon */
+                  }
+
+                  .woocommerce-Price-amount {
+                    margin-right: 2%;
+                    font-weight: 500;
+                    color: #a2a3b1;
+                  }
                 }
               }
-              label {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: flex-end;
-                margin-left: 1%;
-                width: 100%;
-                font-weight: 400;
+            }
+          }
+        }
+      }
+      .order-summary {
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        padding: 4%;
+
+        div {
+          background-color: #00000000;
+        }
+
+        .order-products {
+          padding: 0;
+
+          .product-item {
+            padding: 2%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 13px;
+            background-color: #f6f6f6;
+
+            h2 {
+              margin-top: 0;
+              size: 20px;
+              weight: 500;
+            }
+
+            .product-thumbnail {
+              padding: 0;
+              margin-top: 0;
+              img {
+                width: 50px;
+              }
+            }
+            .product-details {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 0;
+              width: 100%;
+              margin-top: 0;
+
+              .product-name {
                 font-size: 16px;
-                color: #a2a3b1;
-
-                &::after {
-                  content: ""; /* Empty content to hide the colon */
-                }
-
-                .woocommerce-Price-amount {
-                  margin-right: 2%;
-                  font-weight: 500;
-                  color: #a2a3b1;
-                }
+                font-weight: 500;
+                padding: 0 2%;
+                min-width: 60%;
+                max-width: 60%;
+              }
+              .product-quantity label,
+              .product-subtotal {
+                font-weight: 500;
+                font-size: 16px;
               }
             }
           }
