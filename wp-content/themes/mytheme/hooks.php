@@ -93,3 +93,26 @@ function remove_checkout_email_default_value($value, $input) {
 }
 add_filter('woocommerce_checkout_get_value', 'remove_checkout_email_default_value', 10, 2);
 
+add_filter('woocommerce_package_rates', 'restrict_shipping_options', 10, 2);
+
+// RESTRICT SHIPPING OPTIONS
+function restrict_shipping_options($rates, $package) {
+    
+    $free_shipping_available = false;
+    foreach ($rates as $rate) {
+        if ($rate->method_id === 'free_shipping') {
+            $free_shipping_available = true;
+            break;
+        }
+    }
+
+    if ($free_shipping_available) {
+        foreach ($rates as $key => $rate) {
+            if ($rate->method_id !== 'free_shipping') {
+                unset($rates[$key]);
+            }
+        }
+    }
+
+    return $rates;
+}

@@ -93,7 +93,6 @@ if ( $options['unite_billing_shipping'] && $options['show_shipping_step'] ) {
 
 // No checkout fields within the $checkout object
 if ( !$has_checkout_fields) {
-    unset($steps['billing']);
     unset($steps['shipping']);
 }
 

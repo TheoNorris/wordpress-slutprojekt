@@ -7,7 +7,7 @@ const BASE = __dirname.replace(ROOT, "");
 export default defineConfig(() => ({
   base: "",
   server: {
-    protocol: "ws",
+    protocol: "wp",
     host: "localhost",
     port: 5173,
   },

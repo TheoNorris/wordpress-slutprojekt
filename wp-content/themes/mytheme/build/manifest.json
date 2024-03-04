@@ -1,8 +1,4 @@
 {
-  "assets/fonts/sfprodisplay.ttf": {
-    "file": "assets/sfprodisplay.ttf",
-    "src": "assets/fonts/sfprodisplay.ttf"
-  },
   "resources/js/app.js": {
     "file": "assets/app.js",
     "isEntry": true,
