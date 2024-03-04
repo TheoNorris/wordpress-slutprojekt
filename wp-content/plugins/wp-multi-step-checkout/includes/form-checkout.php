@@ -144,6 +144,7 @@ do_action( 'wpmc_after_step_tabs' );
 
 foreach( $steps as $_id => $_step ) {
     echo '<!-- Step: '.$_step['title'].' -->'; 
+
 	echo '<div class="wpmc-step-item '.$_step['class']. $first_step . '">';
     if ( isset($_step['sections'] ) ) {
         foreach ( $_step['sections'] as $_section ) {
@@ -155,6 +156,88 @@ foreach( $steps as $_id => $_step ) {
         }
     } else {
         do_action('wmsc_step_content_' . $_id);
+    }
+    if ( $_step['title'] === 'Payment' ) {
+        echo '<div class="order-summary">';
+    
+                // Display Products
+        do_action( 'woocommerce_review_order_before_cart_contents' );
+
+        echo '<div class="order-products">';
+        echo '<h2>' . esc_html__( 'Products', 'woocommerce' ) . '</h2>';
+        echo '<table class="order-table">';
+        echo '<thead><tr><th>' . esc_html__( 'Product', 'woocommerce' ) . '</th><th>' . esc_html__( 'Price', 'woocommerce' ) . '</th></tr></thead>';
+        echo '<tbody>';
+
+        foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+            $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+
+            if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+                ?>
+                <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+                    <td class="product-thumbnail">
+                        <?php
+                        $thumbnail = $_product->get_image( 'woocommerce_thumbnail' );
+                        if ( $thumbnail ) {
+                            echo wp_kses_post( $thumbnail );
+                        } else {
+                            echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
+                        }
+                        ?>
+                    </td>
+                    <td class="product-name">
+                        <?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '&nbsp;'; ?>
+                        <?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); ?>
+                        <?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+                    </td>
+                    <td class="product-total">
+                        <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+                    </td>
+                </tr>
+                <?php
+            }
+        }
+
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>'; // Close order-products div
+
+    
+        do_action( 'woocommerce_review_order_after_cart_contents' );
+
+        // Display Shipping Address
+        echo '<div class="order-address">';
+        echo '<h2>' . esc_html__( 'Shipping Address', 'woocommerce' ) . '</h2>';
+        echo '<p>' . WC()->customer->get_shipping_address_1() . '</p>';
+        echo '<p>' . WC()->customer->get_shipping_postcode() . ', ' . WC()->customer->get_shipping_city() . '</p>';
+        echo '</div>'; // Close order-address div
+    
+        // Display Subtotal
+        echo '<div class="order-subtotal">';
+        echo '<h2>' . esc_html__( 'Subtotal', 'woocommerce' ) . '</h2>';
+        echo '<p>' . WC()->cart->get_cart_subtotal() . '</p>';
+        echo '</div>'; // Close order-subtotal div
+    
+        // Display Taxes
+        echo '<div class="order-taxes">';
+        echo '<h2>' . esc_html__( 'Taxes', 'woocommerce' ) . '</h2>';
+        echo '<p>' . WC()->cart->get_taxes_total() . '</p>';
+        echo '</div>'; // Close order-taxes div
+
+         // Display Shipping Estimate
+        echo '<div class="order-shipping">';
+        echo '<h2>' . esc_html__( 'Shipping Estimate', 'woocommerce' ) . '</h2>';
+        echo '<p>' . WC()->cart->get_cart_shipping_total() . '</p>';
+        echo '</div>'; // Close order-shipping div
+
+    
+        // Display Order Total
+        echo '<div class="order-total">';
+        echo '<h2>' . esc_html_e( 'Order Total', 'woocommerce' ) . '</h2>';
+        echo '<p>' . wc_price( WC()->cart->get_total( 'edit' ) ) . '</p>';
+        echo '</div>'; // Close order-total div
+    
+        echo '</div>'; // Close order-summary div
     }
     echo '</div>';
 	$first_step = '';

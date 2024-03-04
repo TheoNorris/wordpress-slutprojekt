@@ -116,3 +116,19 @@ function restrict_shipping_options($rates, $package) {
 
     return $rates;
 }
+
+if ( ! function_exists( 'wmsc_step_content_payment_modified' ) ) {
+    function wmsc_step_content_payment_modified() {
+        echo '<h3 id="payment_heading">' . __( 'Payment', 'woocommerce' ) . '</h3>';
+
+        // Include the order summary
+        echo '<div class="order-summary">';
+        echo '<h4>' . __( 'Order Summary', 'your-text-domain' ) . '</h4>';
+        // Add code to display order summary here
+        echo '</div>';
+
+        do_action( 'wpmc-woocommerce_checkout_payment' );
+        do_action( 'woocommerce_checkout_after_order_review' );
+    }
+}
+add_action( 'wmsc_step_content_payment_modified', 'wmsc_step_content_payment_modified' );
