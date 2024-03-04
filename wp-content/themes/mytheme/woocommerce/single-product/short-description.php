@@ -26,7 +26,7 @@ $short_description = apply_filters( 'woocommerce_short_description', $post->post
 if ( ! $short_description ) {
 	return;
 }
-
+echo do_shortcode('[custom_atributes_shortcode]');
 ?>
 <div class="woocommerce-product-details__short-description">
 	<?php echo $short_description; // WPCS: XSS ok. ?>

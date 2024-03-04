@@ -116,3 +116,48 @@ function restrict_shipping_options($rates, $package) {
 
     return $rates;
 }
+/* ---------------------------------------------------------------------------------------------------- */
+
+// Ta bort den korta beskrivningen före varianterna
+
+
+// Lägg till den nya åtgärden för att flytta den korta beskrivningen efter varianterna
+add_action('woocommerce_after_variations_table', 'move_short_description_after_variations');
+
+
+function move_short_description_after_variations() {
+    global $product;
+    
+    // Kontrollera om det är en variabel produkt
+    if ($product && $product->is_type('variable')) {
+        // Output the short description
+        wc_get_template('single-product/short-description.php');
+    }
+}
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+
+/* ------------------------------------------------------------------------------------- */
+
+add_action( 'woocommerce_before_single_product', 'bbloomer_woocommerce_short_description_truncate_read_more' );
+  
+function bbloomer_woocommerce_short_description_truncate_read_more() { 
+   wc_enqueue_js('
+      var show_char = 200;
+      var ellipses = "... ";
+      var content = $(".woocommerce-product-details__short-description").html();
+      if (content.length > show_char) {
+         var a = content.substring(0, show_char);
+         var html = "<span class=\'truncated\'>" + a + ellipses + "<a class=\'read-more\'>Read more</a></p></span><span class=\'truncated\' style=\'display:none\'>" + content + "<a class=\'read-less\'>Read less</a></span>";
+         $(".woocommerce-product-details__short-description").html(html);
+      }
+      $(".read-more").click(function(e) {
+         e.preventDefault();
+         $(".woocommerce-product-details__short-description .truncated").toggle();
+      });
+     $(".read-less").click(function(e) {
+         e.preventDefault();
+         $(".woocommerce-product-details__short-description .truncated").toggle();
+      });
+   ');
+}

@@ -203,3 +203,121 @@ function product_fetch() {
     endif;
 die();
 }
+
+
+/* ------------------------------------------------------------ */
+function custom_atributes_shortcode_function() {
+    $output = '<div class="custom-shortcode-wrapper">';
+
+     // Image 1
+    $image_url_1 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/Screensize.png'; // Change this to the URL of your desired image
+    $output .= '<div class="custom-shortcode-item">';
+    $output .= '<img src="' . esc_url($image_url_1) . '" alt="Image 1">';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">Screen size</h5>';
+    $output .= '<h5>6.7"</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    // Image 2
+    $image_url_2 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/smartphone-rotate-2-svgrepo-com-2.png'; 
+    $output .= '<div class="custom-shortcode-item">';
+    $output .= '<img src="' . esc_url($image_url_2) . '" alt="Image 2">';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">CPU</h5>';
+    $output .= '<h5>Apple A16 Bionic</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    // Image 2
+    $image_url_3 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/smartphone-rotate-2-svgrepo-com-2-1.png'; // Change this to the URL of your desired image
+    $output .= '<div class="custom-shortcode-item">';
+    $output .= '<img src="' . esc_url($image_url_3) . '" alt="Image 2">';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">Number of Cores</h5>';
+    $output .= '<h5>6</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+ 
+     // Image 4
+     $image_url_4 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/smartphone-rotate-2-svgrepo-com-2-2.png'; // Change this to the URL of your desired image
+     $output .= '<div class="custom-shortcode-item">';
+     $output .= '<img src="' . esc_url($image_url_4) . '" alt="Image 2">';
+     $output .= '<div class="text_">';
+     $output .= '<h5 class="color_text">Main camera</h5>';
+     $output .= '<h5>48-12-12</h5>';
+     $output .= '</div>';
+     $output .= '</div>';
+  // Image 5
+  $image_url_5 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/smartphone-rotate-2-svgrepo-com-2-3.png'; // Change this to the URL of your desired image
+  $output .= '<div class="custom-shortcode-item">';
+  $output .= '<img src="' . esc_url($image_url_5) . '" alt="Image 1">';
+  $output .= '<div class="text_">';
+  $output .= '<h5 class="color_text">Front-camera</h5>';
+  $output .= '<h5>12 MP</h5>';
+  $output .= '</div>';
+  $output .= '</div>';
+
+  // Image 6
+  $image_url_6 = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/smartphone-rotate-2-svgrepo-com-2-4.png'; // Change this to the URL of your desired image
+  $output .= '<div class="custom-shortcode-item">';
+  $output .= '<img src="' . esc_url($image_url_6) . '" alt="Image 2">';
+  $output .= '<div class="text_">';
+  $output .= '<h5 class="color_text">Battery capacity</h5>';
+  $output .= '<h5>4323 mAh</h5>';
+  $output .= '</div>';
+  $output .= '</div>';
+
+
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('custom_atributes_shortcode', 'custom_atributes_shortcode_function');
+
+/* -------------------USP shortcode----------------------- */
+
+function custom_usp_shortcode_function() {
+    $output = '<div class="custom-usp-wrapper">';
+
+    // USP 1
+    $usp_1_icon = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/delivery-truck-svgrepo-com-1-1.png'; 
+    $output .= '<div class="custom-usp-item">';
+    $output .= '<div class="pic_">';
+    $output .= '<img src="' . esc_url($usp_1_icon) . '" alt="USP Icon 1">';
+    $output .= '</div>';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">Free Delivery</h5>';
+    $output .= '<h5>1-2 day</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    // USP 2
+    $usp_2_icon = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/shop-2-svgrepo-com-2.png'; 
+    $output .= '<div class="custom-usp-item">';
+    $output .= '<div class="pic_">';
+    $output .= '<img src="' . esc_url($usp_2_icon) . '" alt="USP Icon 2">';
+    $output .= '</div>';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">In Stock</h5>';
+    $output .= '<h5>Today</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    // USP 3
+    $usp_3_icon = 'http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/verify.png'; 
+    $output .= '<div class="custom-usp-item">';
+    $output .= '<div class="pic_">';
+    $output .= '<img src="' . esc_url($usp_3_icon) . '" alt="USP Icon 3">';
+    $output .= '</div>';
+    $output .= '<div class="text_">';
+    $output .= '<h5 class="color_text">Guaranteed</h5>';
+    $output .= '<h5>1 year</h5>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('custom_usp_shortcode', 'custom_usp_shortcode_function');
