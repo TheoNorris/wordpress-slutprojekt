@@ -47,6 +47,7 @@ function ajaxCompleteCallback() {
 
 // Hook into AJAX completion event
 document.addEventListener("DOMContentLoaded", function () {
+  
   // Check if WooCommerce AJAX pagination is used
   jQuery(document).ajaxComplete(function (event, xhr, settings) {
     if (settings.url.indexOf("wc-ajax=get_refreshed_fragments") !== -1) {
