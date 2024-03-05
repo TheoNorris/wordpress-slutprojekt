@@ -112,11 +112,44 @@ div.woocommerce-checkout:contains("Checkout") {
 
         div {
           background-color: #00000000;
-        }
-
-        .order-products {
           padding: 0;
-
+          margin-top: 0;
+          h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #545454;
+            margin-bottom: 5px;
+          }
+        }
+        .order-subtotal,
+        .order-taxes,
+        .order-shipping,
+        .order-total,
+        .order-subtotal h2,
+        .order-taxes h2,
+        .order-shipping h2 {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 16px;
+          font-weight: 500;
+        }
+        .order-subtotal h2,
+        .order-shipping h2 {
+          color: $primary_text_color;
+        }
+        .order-total {
+          display: flex;
+          align-items: center;
+        }
+        .order-products {
+          margin-top: 0;
+          h2 {
+            font-size: 20px;
+            weight: 500;
+            color: $primary_text_color;
+            margin-top: 0;
+          }
           .product-item {
             padding: 2%;
             display: flex;
@@ -124,12 +157,7 @@ div.woocommerce-checkout:contains("Checkout") {
             align-items: center;
             border-radius: 13px;
             background-color: #f6f6f6;
-
-            h2 {
-              margin-top: 0;
-              size: 20px;
-              weight: 500;
-            }
+            margin: 4% 0;
 
             .product-thumbnail {
               padding: 0;
@@ -160,6 +188,15 @@ div.woocommerce-checkout:contains("Checkout") {
               }
             }
           }
+        }
+        .order-address div {
+          display: flex;
+          flex-direction: row;
+          font-weight: 400;
+          font-size: 16px;
+          color: $primary_text_color;
+          margin-top: 0;
+          letter-spacing: 0.5px;
         }
       }
     }
@@ -235,6 +272,40 @@ div.woocommerce-checkout:contains("Checkout") {
                 position: relative;
                 border: none;
               }
+            }
+          }
+        }
+      }
+    }
+    .wpmc-step-payment {
+      .woocommerce-checkout-payment,
+      .order-summary {
+        display: inline;
+        width: 42%;
+        vertical-align: top;
+      }
+      .order-summary {
+        float: left;
+      }
+      .woocommerce-checkout-payment {
+        float: right;
+      }
+      #payment ul.payment_methods {
+        background-color: white;
+
+        li {
+          input {
+            display: none;
+          }
+          .payment_box {
+            background-color: white;
+
+            &::before {
+              display: block;
+              border: none;
+              border-top: 2px solid black;
+              width: 38%; /* Extend the line to cover the container width */
+              top: calc(-0.5% + 5px);
             }
           }
         }
