@@ -173,12 +173,6 @@ function display_review_statistics_with_bars_labels_and_stars() {
     $average_rating = $product->get_average_rating();
     $review_count = $product->get_review_count();
 
-    // Check if review count is zero to avoid division by zero error
-    if ($review_count == 0) {
-        echo '<p>No reviews yet</p>';
-        return;
-    }
-
     // Calculate the width of the filled stars
     $width = ($average_rating / 5) * 100;
 
@@ -218,61 +212,65 @@ function display_review_statistics_with_bars_labels_and_stars() {
     echo '</div>';
     // Rating bars
     echo '<ul class="rating-bars">';
-    $rating_counts = array(
-        5 => $product->get_rating_count(5),
-        4 => $product->get_rating_count(4),
-        3 => $product->get_rating_count(3),
-        2 => $product->get_rating_count(2),
-        1 => $product->get_rating_count(1)
-    );
-    $percentage_distribution = array();
+$rating_counts = array(
+    5 => $product->get_rating_count(5),
+    4 => $product->get_rating_count(4),
+    3 => $product->get_rating_count(3),
+    2 => $product->get_rating_count(2),
+    1 => $product->get_rating_count(1)
+);
+$percentage_distribution = array();
 
-    $color = 'color: #FFB547;';
-    foreach ($rating_counts as $rating => $count) {
-        $percentage = ($count / $review_count) * 100;
-        $percentage_distribution[$rating] = round($percentage, 2);
+$color = 'color: #FFB547;';
+foreach ($rating_counts as $rating => $count) {
+    $percentage = ($count / $review_count) * 100;
+    $percentage_distribution[$rating] = round($percentage, 2);
 
-        $class = 'bar';
-        if ($rating == 5) {
-            $class .= ' excellent';
-            $label = 'Excellent';
-            $filled = $color . ' width: 90%;';
-        /*  $excellent_count += $count;  */
-        } elseif ($rating == 4) {
-            $class .= ' good';
-            $label = 'Good';
-            $filled = $color . ' width: 70%;';
-        } elseif ($rating >= 3) {
-            $class .= ' average';
-            $label = 'Average';
-            $filled = $color . ' width: 50%;';
-        } elseif ($rating >= 2) {
-            $class .= ' below-average';
-            $label = 'Below Average';
-            $filled = $color . ' width: 50%;';
-        } elseif ($rating >= 1) {
-            $class .= ' poor';
-            $label = 'Poor';
-            $filled = $color . ' width: 50%;';
-        }
-        echo '<li class="' . $class . '">';
-
-        // Adjusting the width of the outer <div> to accommodate the text label and the bar
-        echo '<div style="width:20%; display: inline-block;">';
-        echo $label;
-        echo '</div>';
-        
-        if ($rating <= 5) {
-            echo '<div style="background-color: grey; height: 5px; width: 70%; border-radius: 10px;">
-                <div style="background-color: #FFB547; height: 100%;' . $filled . ' border-radius: 10px;"></div>
-            </div>';
-        }
-        
-        echo '<span style="float:right">' . $rating_counts[$rating] . '</span>';
-        echo '</li>';
-        
+    $class = 'bar';
+    if ($rating == 5) {
+        $class .= ' excellent';
+        $label = 'Excellent';
+        $filled = $color . ' width: 90%;';
+       /*  $excellent_count += $count;  */
+    } elseif ($rating == 4) {
+        $class .= ' good';
+        $label = 'Good';
+        $filled = $color . ' width: 70%;';
+    } elseif ($rating >= 3) {
+        $class .= ' average';
+        $label = 'Average';
+        $filled = $color . ' width: 50%;';
+    } elseif ($rating >= 2) {
+        $class .= ' below-average';
+        $label = 'Below Average';
+        $filled = $color . ' width: 50%;';
+    } elseif ($rating >= 1) {
+        $class .= ' poor';
+        $label = 'Poor';
+        $filled = $color . ' width: 50%;';
     }
-    echo '</ul>';
+    echo '<li class="' . $class . '">';
+
+    // Adjusting the width of the outer <div> to accommodate the text label and the bar
+    echo '<div style="width:20%; display: inline-block;">';
+    echo $label;
+    echo '</div>';
+    
+    if ($rating <= 5) {
+        echo '<div style="background-color: grey; height: 5px; width: 70%; border-radius: 10px;">
+            <div style="background-color: #FFB547; height: 100%;' . $filled . ' border-radius: 10px;"></div>
+        </div>';
+    }
+    
+    echo '<span style="float:right">' . $rating_counts[$rating] . '</span>';
+    echo '</li>';
+    
+}
+echo '</ul>';
+
+
+
+
 
     echo '</div>'; // Close review-statistics div
 }
