@@ -158,6 +158,7 @@ div.woocommerce-checkout:contains("Checkout") {
             border-radius: 13px;
             background-color: #f6f6f6;
             margin: 4% 0;
+            padding: 2.5% 5%;
 
             .product-thumbnail {
               padding: 0;
@@ -181,10 +182,13 @@ div.woocommerce-checkout:contains("Checkout") {
                 min-width: 60%;
                 max-width: 60%;
               }
-              .product-quantity label,
+              .product-quantity,
               .product-subtotal {
                 font-weight: 500;
                 font-size: 16px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
               }
             }
           }
@@ -290,25 +294,113 @@ div.woocommerce-checkout:contains("Checkout") {
       .woocommerce-checkout-payment {
         float: right;
       }
-      #payment ul.payment_methods {
-        background-color: white;
-
-        li {
-          input {
-            display: none;
+      #payment {
+        background: none;
+        ul.payment_methods {
+          background-color: white;
+          position: relative;
+          padding: 7% 0;
+          border: none;
+          padding-bottom: 1%;
+          .wc_payment_method.payment_method_cod label,
+          .wc_payment_method.payment_method_cod input {
+            position: absolute;
+            top: 0;
+            width: 100%;
           }
-          .payment_box {
-            background-color: white;
+          .wc_payment_method.payment_method_stripe
+            label[for="payment_method_stripe"],
+          .wc_payment_method.payment_method_stripe input {
+            position: absolute;
+            top: 0;
+            right: 3%;
+          }
 
-            &::before {
-              display: block;
-              border: none;
-              border-top: 2px solid black;
-              width: 38%; /* Extend the line to cover the container width */
-              top: calc(-0.5% + 5px);
+          li {
+            input {
+              display: none;
+            }
+            .payment_box {
+              background-color: white;
+
+              &::before {
+                display: none;
+              }
+              #wc-stripe-cc-form {
+                &::before {
+                  content: "";
+                  display: block;
+                  width: 100%;
+                  height: 280px;
+                  background-image: url("../images/bankcard.png");
+                  background-size: contain;
+                  background-position: left;
+                  background-repeat: no-repeat;
+                  margin: 0;
+                }
+              }
+              div {
+                label {
+                  display: none;
+                }
+                .stripe-card-group {
+                  font-size: 14px;
+                  font-weight: 500;
+                  width: 100%;
+                  border-radius: 8px;
+                  border-color: #e1e1e1;
+                  background-color: #ffffff;
+                  border: 1px solid #ffffff;
+                  margin-bottom: 5%;
+                }
+              }
+              fieldset:nth-of-type(2) {
+                display: none;
+              }
+            }
+            div {
+              padding: 0;
+              margin: 0;
+              background-color: white;
+
+              p {
+                font-size: 16px;
+                font-weight: 400;
+                padding-bottom: 0;
+              }
             }
           }
         }
+        .place-order {
+          background-color: white;
+          margin-top: 5%;
+          padding: 0;
+
+          div {
+            background-color: white;
+            margin-top: 0;
+            padding: 0;
+            border: none;
+          }
+          .woocommerce-terms-and-conditions-wrapper {
+            p label span {
+              font-size: 14px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      #place_order {
+        font-size: 16px;
+        font-size: 500;
+        border-radius: 6px;
+        padding: 20px;
+        width: 200px;
+        border: 1px solid #000000;
+        background-color: #000000;
+        margin-top: 10%;
       }
     }
   }
@@ -327,6 +419,7 @@ div.woocommerce-checkout:contains("Checkout") {
       border-radius: 6px;
       padding: 20px;
       width: 200px;
+      border: 1px solid #000000;
     }
     #wpmc-next {
       background-color: #000000;
@@ -341,4 +434,8 @@ div.woocommerce-checkout:contains("Checkout") {
       border: 1px solid #000000;
     }
   }
+}
+
+#wc-stripe-cc-form .StripeElement {
+  padding: 10px !important;
 }
