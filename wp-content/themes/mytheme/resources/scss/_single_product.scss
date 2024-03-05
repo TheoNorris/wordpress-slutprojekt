@@ -154,6 +154,7 @@
                             color: #00000037;
                             text-decoration: line-through;
                             margin-right: 10px;
+                            font-size: 24px;
                         }
                     }
                 }
@@ -283,6 +284,10 @@
                         border: 1px solid black;
                         border-radius: 6px;
                         padding: 3% 3% 3% 3%;
+                        &:hover{
+                            transform: translateY(3%) ;
+                            cursor: pointer;
+                        }
                     }
                     .single_add_to_cart_button{
                         padding: 10px 30px;
@@ -291,6 +296,10 @@
               background-color: black;
               color:#fff;
               cursor: pointer;
+              &:hover{
+                transform: translateY(3%) ;
+                cursor: pointer;
+            }
                     }
                 }
             }
@@ -448,11 +457,17 @@
                                     display: none;
                                 }
                                 #commentform{
+                                    .comment-form-rating{
+                                        .selected{
+                                            display: none;
+                                        }
+                                    }
                                     margin-top: 20px;
                                     label{
                                         color: $secondary_text_color;
                                     }
                                     p{
+                                        
                                         a{
                                             color: #000;
                                             cursor: pointer;
