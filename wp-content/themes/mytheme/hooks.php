@@ -161,3 +161,118 @@ function bbloomer_woocommerce_short_description_truncate_read_more() {
       });
    ');
 }
+
+
+
+
+
+function display_review_statistics_with_bars_labels_and_stars() {
+    global $product;
+
+    // Get average rating and review count
+    $average_rating = $product->get_average_rating();
+    $review_count = $product->get_review_count();
+
+    // Check if review count is zero to avoid division by zero error
+    if ($review_count == 0) {
+        echo '<p>No reviews yet</p>';
+        return;
+    }
+
+    // Calculate the width of the filled stars
+    $width = ($average_rating / 5) * 100;
+
+    // Get the number of full stars
+    $full_stars = floor($average_rating);
+    // Calculate the percentage of the last star needed
+    $percentage_last_star = ($average_rating - $full_stars) * 100;
+
+    // Display review statistics with bars, labels, and star images
+    echo '<div class="review-statistics">';
+    echo '<div class="avrg">';
+    echo '<h2>' . $average_rating . ' </h2> <p> of ' . $review_count . ' reviews</p>';
+    echo '<div class="rating" style="position: relative; width: 100%;">'; // Apply flexbox here
+    // Full stars container
+    echo '<div class="stars-container" style="position: relative; top: 0; left: 0; width: ' . $width . '%;">';
+
+    // Output full stars
+    for ($i = 1; $i <= $full_stars; $i++) {
+        echo '<img src="' . get_template_directory_uri() . '/resources/images/full_star.png" alt="Full Star" style="position: relative;">';
+    }
+
+    // Partial star
+    if ($percentage_last_star > 0 && $full_stars < 5) {
+        echo '<img src="' . get_template_directory_uri() . '/resources/images/full_star.png" style="clip-path: inset(0 ' . (100 - $percentage_last_star) . '% 0 0); width: 10%; position: absolute; top: 0; left: ' . ($width - 50). '%;" alt="Partial Star">';
+    }
+    
+    echo '</div>'; // Close stars container
+
+    // Empty stars container
+    echo '<div class="empty-stars-container" style="position: absolute; top: 0; left: 0; width: ' . $width . '%;">';
+    // Output empty stars
+    for ($i = 1; $i <= 5; $i++) {
+        echo '<img src="' . get_template_directory_uri() . '/resources/images/empty_star.png" alt="Empty Star">';
+    }
+    echo '</div>'; // Close empty stars container
+    echo '</div>'; // Close stars container
+    echo '</div>';
+    // Rating bars
+    echo '<ul class="rating-bars">';
+    $rating_counts = array(
+        5 => $product->get_rating_count(5),
+        4 => $product->get_rating_count(4),
+        3 => $product->get_rating_count(3),
+        2 => $product->get_rating_count(2),
+        1 => $product->get_rating_count(1)
+    );
+    $percentage_distribution = array();
+
+    $color = 'color: #FFB547;';
+    foreach ($rating_counts as $rating => $count) {
+        $percentage = ($count / $review_count) * 100;
+        $percentage_distribution[$rating] = round($percentage, 2);
+
+        $class = 'bar';
+        if ($rating == 5) {
+            $class .= ' excellent';
+            $label = 'Excellent';
+            $filled = $color . ' width: 90%;';
+        /*  $excellent_count += $count;  */
+        } elseif ($rating == 4) {
+            $class .= ' good';
+            $label = 'Good';
+            $filled = $color . ' width: 70%;';
+        } elseif ($rating >= 3) {
+            $class .= ' average';
+            $label = 'Average';
+            $filled = $color . ' width: 50%;';
+        } elseif ($rating >= 2) {
+            $class .= ' below-average';
+            $label = 'Below Average';
+            $filled = $color . ' width: 50%;';
+        } elseif ($rating >= 1) {
+            $class .= ' poor';
+            $label = 'Poor';
+            $filled = $color . ' width: 50%;';
+        }
+        echo '<li class="' . $class . '">';
+
+        // Adjusting the width of the outer <div> to accommodate the text label and the bar
+        echo '<div style="width:20%; display: inline-block;">';
+        echo $label;
+        echo '</div>';
+        
+        if ($rating <= 5) {
+            echo '<div style="background-color: grey; height: 5px; width: 70%; border-radius: 10px;">
+                <div style="background-color: #FFB547; height: 100%;' . $filled . ' border-radius: 10px;"></div>
+            </div>';
+        }
+        
+        echo '<span style="float:right">' . $rating_counts[$rating] . '</span>';
+        echo '</li>';
+        
+    }
+    echo '</ul>';
+
+    echo '</div>'; // Close review-statistics div
+}

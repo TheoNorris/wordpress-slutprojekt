@@ -1,0 +1,995 @@
+== Changelog ==
+
+= 6.11.4 (2023-11-02) =
+
+- Fixed localized rating values.
+- Fixed quick/bulk editing of WooCommerce Products from automatically disabling reviews support.
+- Fixed review responses disappearing when editing reviews on the frontend with the Review Authors addon.
+- Fixed notifications from triggering when a review is auto-saved as a draft.
+- Fixed notifications from triggering when reviews are imported.
+- Fixed WordPress 6.4 compatibility.
+
+= 6.11.3 (2023-10-20) =
+
+- Fixed cache plugin integrations
+
+= 6.11.0 (2023-10-20) =
+
+- Added a flyout help menu on Site Reviews pages in the WordPress Admin.
+- Added a "Request Verification" setting
+- Added support for the [Nitropack](https://wordpress.org/plugins/nitropack/) cache plugin
+- Added tag buttons to notification message setting
+- Added the ability to approve a review directly from a Discord, Email, or Slack notification
+- Changed number of scheduled actions to 50 per page
+- Fixed conversion (HTML to plain text) of links in notifications
+- Fixed importing of saved strings with the Import Settings tool
+- Removed the ability to manually verify reviews from the WordPress Admin (use the "Request Verification" setting instead!). To re-enable manual verification of reviews use the "site-reviews/verification/enabled" filter hook.
+
+= 6.10.6 (2023-09-04) =
+
+- Fixed a PHP error triggered when checking compatibility with the OptimizePress v2 plugin
+
+= 6.10.5 (2023-09-02) =
+
+- Fixed compatibility with the OptimizePress v2 plugin
+
+= 6.10.4 (2023-08-31) =
+
+- Fixed compatibility with the WooCommerce Tab Manager plugin
+
+= 6.10.3 (2023-08-29) =
+
+- Fixed a [Broken Access Control vulnerability]() which allowed reviews to be assigned to private or protected pages
+- Fixed RankMath integration to only support rich-snippet-enabled schema types
+- Fixed schema detection on private Elementor pages
+
+= 6.10.2 (2023-08-18) =
+
+- Fixed and simplified Schema plugin integrations
+- Fixed compatibility with the WooCommerce Blocks plugin
+- Fixed compatibility with the WooCommerce [High-Performance Order Storage](https://woocommerce.com/document/high-performance-order-storage/)
+- Updated Action Scheduler to v3.6.2
+
+= 6.10.1 (2023-08-09) =
+
+- Fixed compatibility with WooCommerce v8.0
+
+= 6.10.0 (2023-08-05) =
+
+- Added integration with [myCRED](https://mycred.me/)
+- Added listtable filter for Accepted Terms (All Reviews admin page)
+- Added options to override the Site Reviews shortcode settings for a WooCommerce product (find the options in the "product data" metabox)
+- Added priority option for categories
+- Changed the console log level for validation errors from Warning to Info
+- Fixed Bulk Edit from removing author assignments
+- Fixed excerpt fallback when PHP Intl extension is disabled
+- Fixed honeypot field IDs
+- Fixed Migrate Plugin tool (force-running plugin migration will fix orphaned foreign constraints related to old database table prefixes)
+- Fixed registration of assignment meta keys
+- Fixed Ultimate Member avatar compatibility
+- Updated API documentation
+
+= 6.9.5 (2023-06-14) =
+
+- Fixed plugin migration (force-running all migrations should now fix database issues related to foreign constraints)
+- Fixed WPEngine detection in System Info
+- Updated documentation
+
+= 6.9.4 (2023-05-30) =
+
+- Fixed unicode support for author name in reviews
+
+= 6.9.3 (2023-05-26) =
+
+- Fixed compatibility with WordPress v5.8 and v5.9
+
+= 6.9.2 (2023-05-22) =
+
+- Fixed "read more" links in exceprts
+
+= 6.9.1 (2023-05-22) =
+
+- Fixed `{review_assigned_links}` template tag in email notifications
+
+= 6.9.0 (2023-05-21) =
+
+- Added support for field descriptions (Review Forms addon required)
+- Deprecated the "site-reviews/slack/compose" hook (use the "site-reviews/slack/notification" hook instead)
+- Fixed a PHP error caused by a bug in several third-party migration plugins
+- Fixed excerpt character split
+- Fixed paragraph spacing in reviews
+- Fixed review caching
+- Fixed settings sanitization
+- Fixed styled SELECT elements
+- Updated Action Scheduler to v3.6.0
+- Updated the Date sanitizer to allow a date format
+- Updated the Slack integration to use block composition
+
+= 6.8.1 (2023-04-27) =
+
+- Added Assigned Links to Discord notifications
+- Fixed Discord notification avatar and username (i.e. Site Reviews now uses the values configured in the Discord Webhook)
+
+= 6.8.0 (2023-04-26) =
+
+- Added "Send to Discord channel" notification setting
+- Fixed name initials when reviewer's name is empty
+
+= 6.7.7 (2023-04-21) =
+
+- Fixed Divi plugin style button icon position
+
+= 6.7.6 (2023-04-20) =
+
+- Added support for the upcoming Site Reviews Premium plugin.
+- Fixed excerpt compatibility with HTML tags (well...sort of: HTML tag pairs (i.e. <a>...</a>) are now counted as a single word regardless of the number of words inside the tag)
+- Fixed link attributes in review responses
+- Fixed System Info permissions
+- Fixed the reCAPTCHA v3 Threshold setting
+
+= 6.7.5 (2023-04-01) =
+
+- Fixed FAQ code example for sorting a Query Loop block by rating
+
+= 6.7.4 (2023-03-29) =
+
+- Fixed deactivation notice for retired addons
+- Fixed support for PHP versions that are missing the iconv extension
+- Fixed the Assigned Users "profile_id" value to support the WordPress author page
+
+= 6.7.3 (2023-03-23) =
+
+- Fixed compatibility with avatar plugins (change the Fallback Avatar setting to "None")
+
+= 6.7.2 (2023-03-22) =
+
+- Fixed Unicode support in review name field
+
+= 6.7.1 (2023-03-21) =
+
+- Fixed a [Stored XSS vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-6-7-1-admin-stored-xss-vulnerability) related to settings sanitization
+
+= 6.7.0 (2023-03-17) =
+
+- Added support for the Review Authors addon
+- Fixed broken addon links
+- Fixed memory issue with modals
+- Renamed the "site-reviews/review/saved" hook to "site-reviews/review/updated"
+- Updated documentation on customising stars
+
+= 6.6.2 (2023-03-12) =
+
+- Fixed id attribute in setting fields
+- Fixed initials avatar image when name is empty or numerical
+- Fixed [Loyalty Program for WooCommerce](https://advancedcouponsplugin.com/woocommerce-loyalty-program/) from assigning points for unapproved reviews
+- Fixed Tinymce shortcode popup in Classic Editor
+- Fixed [WooCommerce Loyalty Points and Rewards](https://www.flycart.org/products/wordpress/wployalty) from assigning points for unapproved reviews
+- Fixed [WooRewards](https://wordpress.org/plugins/woorewards/) from assigning points for unapproved reviews
+
+= 6.6.1 (2023-03-11) =
+
+- Fixed AJAX pagination
+
+= 6.6.0 (2023-03-10) =
+
+- Added integration with [WooCommerce Loyalty Points and Rewards](https://www.flycart.org/products/wordpress/wployalty)
+- Fixed a [Broken Access Control vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-6-5-0-broken-access-control-vulnerability) which allowed any logged-in user to clear the Site Reviews > Tools > Console.
+- Fixed a [Cross Site Scripting (XSS) vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-6-5-1-cross-site-scripting-xss-vulnerability) which allowed a logged-in user (with the edit_posts capability) to insert malicious javascript code into a block attribute when adding it to a page.
+- Fixed a [Cross Site Scripting (XSS) vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-6-5-1-cross-site-scripting-xss-vulnerability-2) which allowed a logged-in user (with the edit_posts capability) to insert malicious javascript code into a shortcode attribute when adding it to a page.
+- Fixed compatibility with [Perfect Brands for WooCommerce](https://wordpress.org/plugins/perfect-woocommerce-brands/)
+
+= 6.5.1 (2023-02-23) =
+
+- Fixed copy/pasting of shortcode examples from the Shortcodes documentation
+- Updated Shortcodes documentation
+
+= 6.5.0 (2023-02-21) =
+
+- Added date and status options to the Export Reviews tool
+- Added new "Single Review" block to display a single review
+- Added new "Single Review" Elementor widget to display a single review
+- Added new "Single Review" widget to display a single review
+- Added new [site_review] shortcode to display a single review
+- Fixed ability to press Enter when writing a response to a review using the inline editor on the All Reviews admin page
+- Fixed button loading in the review form
+- Fixed compatibility with Multilingual plugins (you should now be able to translate addons)
+- Fixed compatibility with Object Cache plugins (you should now be able to save the settings if you weren't able to before)
+- Fixed compatibility with WordPress Multisite
+- Fixed HTML entities from breaking translations in the Strings settings
+- Fixed PHP 8.1 deprecation notices
+- Fixed PHP errors when changing the maximum rating with an unsupported filter hook
+- Fixed support for rendering reviews with custom fields (Review Forms addon) and themes (Review Themes addon) using the helper functions
+- Fixed the visibility of the Import Product Reviews tool
+- Improved sanitization of form values and helper function arguments
+- Improved the System Info report
+- Renamed the "site-reviews/rest-api/reviews/properties" hook to "site-reviews/rest-api/reviews/schema/properties"
+- Renamed the "site-reviews/rest-api/summary/properties" hook to "site-reviews/rest-api/summary/schema/properties"
+- Updated Action Scheduler to v3.5.4
+
+= 6.4.1 (2022-12-28) =
+
+- Fixed assignment meta key registration
+
+= 6.4.0 (2022-12-27) =
+
+- Added Action Scheduler information to System Info
+- Added assignment meta keys (_glsr_average, _glsr_ranking, _glsr_reviews) to the WP REST API
+- Added compatibility with [Loyalty Program for WooCommerce](https://advancedcouponsplugin.com/woocommerce-loyalty-program/)
+- Added compatibility with [WooRewards](https://wordpress.org/plugins/woorewards/)
+- Added FAQ documentation which explains how to sort a Query Loop block by average rating, ranking, or number of reviews.
+- Added GamiPress integration
+- Added Import Product Reviews tool (for WooCommerce Product reviews)
+- Added WooCommerce integration
+- Fixed a [CSV Injection vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-6-2-0-unauth-csv-injection-vulnerability) which allowed malicious users to include formula values in reviews when exporting them to a CSV file.
+- Fixed an issue causing a timeout when running plugin migrations
+- Fixed compatibility with optimisation plugins which do not observe loading order of inline scripts
+- Fixed compatibility with other reCAPTCHA plugins
+- Fixed database table PRIMARY indexes on websites running MariaDB
+- Fixed localization of the Summary rating number
+- Fixed summary rating number to display in decimal format and using the website locale
+- Fixed the console logging, it now uses the saved log level
+- Fixed translatable strings
+- Removed the GamiPress Reviews addon, it's now fully integrated into Site Reviews
+- Removed the Woocommerce Reviews addon, it's now fully integrated into Site Reviews
+
+= 6.2.0 (2022-11-04) =
+
+- Added a setting to detect and prevent duplicate review submissions from the same person.
+- Added support for the [Swift Performance](https://swiftperformance.io/) plugin
+- Disabled notifications when importing reviews
+- Fixed date sanitizer
+- Fixed localization for the captcha integrations
+- Fixed migrations that update plugin settings
+- Fixed PHP warning when excerpts are generated
+- Fixed premium notice displaying for licensed users
+- Fixed size of button loading animation
+- Fixed support for GMT dates when importing reviews
+- Fixed the hCaptcha integration, it no longer tries to submit the review after solving the captcha unless the submit button was previously clicked.
+- Fixed the reCAPTCHA integrations
+- Fixed the Rollback Plugin tool
+
+= 6.1.2 (2022-10-16) =
+
+- Added a notice when integrating with "Schema and Structured Data plugin" to load schema markup in the footer
+- Fixed a possible issue with saving addon licenses (hopefully!)
+- Fixed Schema Pro integration
+- Improved documentaton
+
+= 6.1.1 (2022-10-12) =
+
+- Fixed admin page header on mobile devices
+- Fixed links in welcome notice for new users
+- Fixed plugin notices
+
+= 6.1.0 (2022-10-11) =
+
+- Added [Cloudflare Turnstile](https://blog.cloudflare.com/turnstile-private-captcha-alternative/) captcha support
+- Added [RankMath Pro](https://rankmath.com/) integration with the Site Reviews schema
+- Added [Schema and Structured Data for WP](https://structured-data-for-wp.com/) integration with the Site Reviews schema
+- Added [Schema Pro](https://wpschema.com/) integration with the Site Reviews schema
+- Fixed compatibility with the [hCaptcha](https://wordpress.org/plugins/hcaptcha-for-forms-and-more/) plugin
+- Refreshed the design of the admin pages
+- Removed the redirect to welcome page on activation
+- Removed third-party notices from the Site Reviews admin pages
+- Updated the documentation
+- Updated the "Welcome to Site Reviews" page
+
+= 6.0.7 (2022-09-26) =
+
+- Updated the Upgrade Guide (please make sure to read this if you updated from Site Reviews v5 or lower. You can find the Upgrade guide on the Help page.)
+
+= 6.0.6 (2022-09-25) =
+
+- Fixed integration with Polylang's String Translations
+- Fixed the Reset Permissions tool
+- Fixed the Slack integration [@andersk](https://github.com/andersk)
+- Updated the [Action Scheduler](https://github.com/woocommerce/action-scheduler/) library to v3.5.2
+
+= 6.0.5 (2022-09-16) =
+
+- Fixed CSS loading on pages which do not load the Gutenberg button and search CSS
+- Fixed plugin migration to run immediately when the database version needs updating
+
+= 6.0.4 (2022-09-15) =
+
+- Fixed a PHP 7.2 syntax error
+- Fixed addon activation routines
+- Fixed autoloading for Php80 polyfill
+- Fixed footer notice placement
+
+= 6.0.1 (2022-09-15) =
+
+- Fixed notice placement
+
+= 6.0.0 (2022-09-14) =
+
+- 🚨 Requires at least PHP v7.2
+- 🚨 Requires at least WordPress v5.8
+- 🚨 Changed the Divi plugin style to use the Divi Gallery pagination style for review pagination
+- 🚨 Changed the review title tag from <h3> to <h4>. If you need to change it back, please see the FAQ help page.
+- 🚨 Changed the strings "← Previous" and "Next →" to "Previous" and "Next". If you have customised these strings in the settings, please update them.
+- 🚨 Removed support for Internet Explorer
+- 🚨 Removed support for PHP 5.6, 7.0, and 7.1
+- 🚨 Removed the Polyfill.io script (since it was used for IE support)
+- 🚨 Removed the "site-reviews/after/submission" javascript event (if you were using this event, please see the Upgrade guide)
+- 🚨 Rewrote the button and pagination loading animations. If you are using a custom Site Reviews pagination template in your child theme, please remove the `{{ loader }}` template tag.
+- Added a deactivation feedback dialog
+- Added a "Limit Reviews For" setting which allows you to set a time-limit (in days) for Review Limits
+- Added ability to mark reviews as "Verified"
+- Added ability to search reviews by ID on the All Reviews admin page
+- Added automatic conversion of UTF-16/UTF-32 encoded CSV files when importing reviews
+- Added custom capabilities for review categories
+- Added experimental filter hooks to combine css and javascript files when using addons (see Help > Hooks)
+- Added migration and nonce support for LiteSpeed Cache (flushes the cache after migration)
+- Added migration support for WP Rocket (flushes the cache after migration)
+- Added support for the Bluehost "Endurance Page Cache" must-use plugin
+- Added the Bootstrap v5 plugin style
+- Added the Elementor Pro plugin style
+- Added the `rating_field` option to the Summary block and Elementor widget
+- Added the `reviews_id` option to the Review Form, this allows you to display submitted reviews immediately without reloading the page.
+- Enabled SSL verification on all requests (this can be disabled with the WordPress [https_ssl_verify](http://developer.wordpress.org/reference/hooks/https_ssl_verify/) filter hook)
+- Fixed compatibility with [Yoast Duplicate Post](https://wordpress.org/plugins/duplicate-post/)
+- Fixed invalid "deprecated" entries which were being added to the Console on some websites
+- Fixed last name initials when there is only a first name
+- Fixed permissions for plugin pages
+- Fixed plugin redirection when bulk activating multiple plugins
+- Fixed primary keys on custom database pivot tables
+- Fixed review importing to skip empty CSV rows without throwing an error
+- Fixed review migration of Site Reviews v4 reviews
+- Fixed the blocks in the Customizer widget panel
+- Fixed the Elementor integration which broke some other Elementor widgets
+- Fixed the `glsr_create_review` function to bypass the "Require Approval" setting
+- Fixed the star rating field for some themes
+- Fixed the Version value in the System Info
+- Fixed the WPML integration
+- Optimised the javascript file sizes
+- Renamed the "Submissions" settings page to "Forms"
+- Rewrote the frontend style to use CSS variables, this should make CSS tweaks easier to write.
+- Rewrote the review modals to support the new review image galleries ([Review Images](https://niftyplugins.com/plugins/site-reviews-images/) addon required)
+- Submit and load more buttons now make use of the WordPress Block button classes by default
+- Updated the Bootstrap plugin styles to Bootstrap v5
+
+= 5.25.1 (2022-07-15) =
+
+- Fixed submit button when captcha is disabled
+
+= 5.25.0 (2022-07-15) =
+
+- Added a `data-pinned` attribute to pinned reviews (this allows you to target pinned reviews with custom CSS)
+- Added FriendlyCaptcha integration
+- Added hCaptcha integration
+- Added reCAPTCHA v3 integration
+- Fixed block errors in Customizer Widgets
+- Fixed bulk-edit and quick-edit (i.e. Respond) layout
+- Fixed review submission response with invalid CAPTCHA keys
+
+= 5.24.3 (2022-06-29) =
+
+- Fixed missing values in Review Details metabox
+
+= 5.24.2 (2022-06-21) =
+
+- Fixed excerpts when using Elementor
+- Fixed reCAPTCHA when using Elementor
+
+= 5.24.1 (2022-05-26) =
+
+- Fixed expanding excerpts (for real this time)
+
+= 5.24.0 (2022-05-26) =
+
+- Added the ability to use post types in the assigned_posts option allowing you to display all reviews for a specific post type.
+- Fixed compatibility with Divi Dynamic CSS
+- Fixed expanding excerpts
+
+= 5.23.6 (2022-04-14) =
+
+- Fixed Export Tool
+- Fixed functionality of the assigned_posts option when use with the reviews and summary shortcodes: If the assigned_posts value is invalid, no reviews should be returned
+
+= 5.23.5 (2022-04-13) =
+
+- Fixed PHP error when importing reviews
+
+= 5.23.4 (2022-04-12) =
+
+- Fixed compatibility with Oxygen Builder
+- Fixed terms toggle when it's not required in the settings
+
+= 5.23.3 (2022-04-10) =
+
+- Reverted build tool used to generate javascript files (as it seems to be causing problems with Divi and Oxygen Builder)
+
+= 5.23.2 (2022-04-10) =
+
+- Fixed admin notices
+- Fixed AJAX pagination of filtered reviews (only applies if using the Review Filters addon)
+- Fixed detection of broken Avatar URLs on local development websites
+
+= 5.23.0 (2022-04-09) =
+
+- Added an "Export Reviews" tool
+- Fixed Rollback feature compatibility with other plugins which use the WordPress Upgrader
+- Fixed PHP 5.6 compatibility
+- Fixed the filter labels on the All Reviews page, they are now translatable
+- Fixed the star rating control when editing a review
+- Fixed validation for fields which are empty and not required
+- Fixed WordPress admin theme support
+- Optimised frontend javascript
+
+= 5.22.2 (2022-03-29) =
+
+- Fixed updating of reviews with custom checkbox and toggle fields.
+
+= 5.22.1 (2022-03-26) =
+
+- Fixed custom translated strings
+- Fixed loading indication on load more button
+
+= 5.22.0 (2022-03-25) =
+
+- Added a debug option to the shortcodes
+- Added "Getting Started" videos to the Help page
+- Added the ability to rollback Site Reviews to a previous version
+- Fixed compatibility with the WP Fastest Cache plugin (to clear the current page cache when a review is submitted)
+- Fixed expanding excerpts when using loadmore pagination
+- Fixed performance on websites with thousands of users
+- Fixed submit button loading indicator on Firefox
+- Fixed the "Heads up! WPForms has detected an issue..." notice when using the WPForms plugin style
+- Updated the FAQ Help page
+
+= 5.21.4 (2022-02-25) =
+
+- Fixed author filter when website has lots of users (the user query is restricted to the first 50 users, this is only a temporary fix until a more complete solution is ready)
+- Fixed a compatibility issue with PHP v5.6
+
+= 5.21.3 (2022-02-22) =
+
+- Improved rendering of ratings on the All Reviews admin page
+- Fixed compatibility for PHP v5.6 - v7.0
+
+= 5.21.2 (2022-02-19) =
+
+- Fixed addon license validation when plugins required by the addon are not installed or inactive
+- Fixed the Elementor integration when using the Review Filters addon
+
+= 5.21.0 (2022-02-18) =
+
+- Added a basic GamiPress integration to award points when someone writes or receives a review. For more advanced GamiPress events, use the new [GamiPress Reviews](https://niftyplugins.com/plugins/site-reviews-gamipress/) addon.
+- Added the [GamiPress Reviews](https://niftyplugins.com/plugins/site-reviews-gamipress/) addon!
+- Added "profile_id" as an accepted value in the "assigned_users" shortcode option
+- Fixed CSS used in form validation
+- Fixed validation of custom checkbox fields
+
+= 5.20.4 (2022-02-11) =
+
+- Added option to change the console logging level (find it on the Console page)
+- Added the "site-reviews/scheduler/per-page" hook to change the number of entries displayed per page in the Scheduler
+- Fixed logging when the form referer is empty (only log the submitted request, not the review object)
+- Fixed visibility of conditional avatar settings
+
+= 5.20.3 (2022-02-01) =
+
+- Added ability to autodetect the CSV delimeter when importing reviews
+- Fixed a bug which allowed spam reviews to bypass validation
+- Fixed licensing for outdated addons
+
+= 5.20.2 (2022-01-29) =
+
+- Fixed the search on the Strings settings page
+
+= 5.20.1 (2022-01-27) =
+
+- Fixed admin notices
+
+= 5.20.0 (2022-01-26) =
+
+- Added an "Author" filter to the All Reviews table
+- Added hooks to override custom field sanitizers (for the Review Forms addon)
+- Added Twenty Twenty-Two plugin style
+- Fixed a security issue with AJAX requests @patchstackapp
+- Fixed compatibility with Object Caching plugins (i.e. Docket Cache)
+- Fixed compatibility with review pagination and the Review Images addon lightbox
+- Fixed schema in review snippets when reviews have an anonymous author
+- Fixed the category filter visibility in the All Reviews table
+- Fixed the status option in the glsr_get_reviews() function, it will no longer return trashed reviews
+- Fixed the updater for inactive addons
+- Updated the polyfill.io script version
+
+= 5.19.1 (2022-01-08) =
+
+- Added loading spinner when changing review status on the All Reviews page
+- Fixed the default Schema title and description on archive pages, it will now use the archive title and description if one exists.
+
+= 5.19.0 (2021-12-30) =
+
+- Added `author_id` column to "Import Third Party Reviews" tool
+- Added settings to customise the login and register URLs
+- Fixed API usage when creating reviews using string values for the assigned_posts (i.e. post_type:slug), assigned_terms (i.e. slug), and assigned_users (i.e. username) parameters
+- Fixed approve/unapprove actions on the All Reviews page which was removing the post_author ID of reviews
+- Fixed importing reviews with unknown authors
+- Fixed the "hide" option when using AJAX pagination
+- Fixed the loading indicator (spinner) on the submit button of the review form
+
+= 5.18.1 (2021-12-19) =
+
+- Added "author_id" as an accepted value in the "assigned_users" shortcode option
+- Fixed FAQ documentation for redirects
+
+= 5.18.0 (2021-12-16) =
+
+- Added "Load more" pagination
+- Added Polylang and WPML translation support for the Notification Template setting and the Custom Text settings
+- Fixed compatibility with the SiteGround Optimizer plugin
+- Fixed pagination when using browser history
+- Renamed the "Translations" settings page to "Strings"
+
+= 5.17.8 (2021-11-24) =
+
+- Fixed compatibility with Ultimate Member user avatars
+
+= 5.17.7 (2021-11-23) =
+
+- Added the "site-reviews/review/request" hook
+
+= 5.17.6 (2021-11-17) =
+
+- Fixed the Approve/Unapprove links on the All Reviews page
+- Fixed PHP error when php_uname() is disabled (used when detecting the webhosting on the System Info page)
+
+= 5.17.5 (2021-11-16) =
+
+- Added setting to add a custom fallback avatar image
+
+= 5.17.4 (2021-11-15) =
+
+- Fixed addon updater
+- Fixed compatibility with GamiPress plugin
+- Fixed deactivation notices on WordPress settings pages
+
+= 5.17.3 (2021-11-15) =
+
+- Fixed an [Unauthenticated Stored XSS vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-5-17-2-unauthenticated-stored-cross-site-scripting-xss-vulnerability) on the Console page (the console wasn't escaping HTML correctly when displaying logged errors)
+
+= 5.17.2 (2021-11-11) =
+
+- Fixed the hidden review content when viewing a review in a modal
+
+= 5.17.1 (2021-11-10) =
+
+- Fixed addon links
+
+= 5.17.0 (2021-11-10) =
+
+- Added the "Review Notifications" addon!
+- Added a setting to restrict the "Require Approval" setting to a minimum rating
+- Added Accepted Terms field to privacy export (using the review creation date as the value if the terms were accepted)
+- Added [Action Scheduler](https://actionscheduler.org/) which allows plugin migrations and review notifications to be queued and dispatched automatically.
+- Added support for additional date formats and columns in the "Import Third Party Reviews" tool
+- Fixed HTML sanitization in review values
+- Fixed importing of IP Addresses in the "Import Third Party Reviews" tool
+- Fixed importing to skip empty CSV rows
+- Fixed non-ajax pagination when paginated URLs are disabled in the settings
+- Fixed potential page collisions with other plugins due to a WordPress bug
+- Fixed the removal of foreign key constraints in database tables when plugin is deactivated
+- Fixed the "terms" field value to be false by default
+- Renamed the "email-notification.php" template file to "notification.php". If you are using this template file in your theme, please rename it.
+- Updated the "Common Problems and Solutions" documentation
+
+= 5.16.2 (2021-10-06) =
+
+- Fixed Initials Avatars
+- Fixed Pixel Avatars
+
+= 5.16.1 (2021-10-04) =
+
+- Fixed compatibility with for Review Themes v1.0.0-beta4
+
+= 5.16.0 (2021-10-03) =
+
+- Added "No category", "No assigned post", and "No assigned term" options to the filters on the All Reviews admin page.
+- Added a "Fallback Avatar" setting
+- Added a locally generated Initials Avatar option in the "Fallback Avatar" setting
+- Added a locally generated Pixel Avatar option in the "Fallback Avatar" setting
+- Added API and shortcode support for slugs in the `assigned_posts` parameter; these should be entered in the format of `post_type:slug`.
+- Added API support for usernames in the `assigned_users` parameter.
+- Fixed compatibility with WP Rocket (purges the cache of the page the review was submitted on)
+- Added custom ServerSideRender functionality to allow post-render events in Gutenberg blocks
+- Fixed Elementor widget icons
+- Fixed loading of modal HTML
+- Fixed text on the Translations settings page with instructions for the "Loco Translate" plugin.
+
+= 5.15.0 (2021-09-28) =
+
+- Added link for Premium members to download the beta version of the Review Themes addon
+- Fixed compatibility with the beta version of the Review Themes addon
+- Fixed missing translation strings
+- Updated star-ratings.js library
+
+= 5.14.1 (2021-09-24) =
+
+- Fixed compatibility error with Gutenberg in WordPress 5.7 and earlier
+
+= 5.14.0 (2021-09-23) =
+
+- Changed permission defaults for admin pages
+- Fixed ability to remove plugin hooks
+- Fixed addon settings link on Plugins page
+- Fixed API permission check for categories
+- Fixed Elementor widgets
+- Fixed HTML entities in Console output
+- Fixed invalid reviews being created from non-review post types
+- Fixed loading indicator on translations search input
+- Fixed locked review status indicators
+- Fixed permission check for approve/unapprove actions
+- Fixed Response column value after a response is given
+- Fixed review limit assignment settings
+- Fixed widget compatibility with WordPress 5.8
+- Fixed widgets in Customizer
+- Improved tooltips
+- Removed the "Trustalyze Confidence System" addon (the service has been discontinued).
+
+= 5.13.2 (2021-08-08) =
+
+- Fixed database queries to correctly handle multiple assignment values
+- Fixed Terms toggle on RTL websites
+
+= 5.13.1 (2021-08-02) =
+
+- Fixed an [Authenticated Stored XSS vulnerability](https://patchstack.com/database/vulnerability/site-reviews/wordpress-site-reviews-plugin-5-13-0-authenticated-stored-cross-site-scripting-xss-vulnerability) which allowed an admin user to add a malicious value when editing a review from the WordPress admin.
+- Fixed the terms toggle which broke due to the multi-checkbox fix in a previous update
+
+= 5.13.0 (2021-08-01) =
+
+- Added the $review->author() method on review objects which returns the author name as defined in the settings
+- Added the "site-reviews/avatar/attributes" hook which allows you to modify the attributes on the avatar <img> tag
+- Fixed Custom field multi-checkboxes
+- Internal changes to support the upcoming Review Themes addon
+- Renamed the "site-reviews/review/response" hook to "site-reviews/review/responded" (see the related FAQ section)
+- Updated the "Common Problems and Solutions"
+- Updated the "FAQ"
+
+= 5.12.9 (2021-07-21) =
+
+- Fixed relative dates to use the GMT date of the review
+
+= 5.12.8 (2021-07-12) =
+
+- Fixed PHP warning introduced in v5.12.7
+
+= 5.12.7 (2021-07-12) =
+
+- Improved the error message when saving addon licenses to make it more descriptive and helpful.
+- Removed the "Discover Premium" button for licensed addon users
+
+= 5.12.6 (2021-07-07) =
+
+- Fixed invalid schema output on the [site_reviews] shortcode when there are no reviews
+- Fixed the Assigned Posts filter on the All Reviews page
+
+= 5.12.5 (2021-07-01) =
+
+- Fixed the plugin migration which sets the custom role capabilities in cases where the default WordPress roles have been renamed or removed
+
+= 5.12.4 (2021-07-01) =
+
+- Fixed the filters on the "All Reviews" admin page
+
+= 5.12.3 (2021-07-01) =
+
+- Added a `data-rating` attribute to the review ratings
+
+= 5.12.2 (2021-06-12) =
+
+- Fixed the Bulk Edit actions
+
+= 5.12.1 (2021-06-12) =
+
+- Fixed the "respond_to_*" capabilities, users can now respond to reviews if they are the author of one of the assigned posts
+
+= 5.12.0 (2021-06-07) =
+
+- Added the "rating_field" shortcode option which allows you to use a custom rating field with the summary
+- Added the "Repair Review Relations" tool
+- Fixed "loose assignment" database queries
+
+= 5.11.1 (2021-06-03) =
+
+- Fixed pagination
+
+= 5.11.0 (2021-06-02) =
+
+- Added a REST API (see the provided documentation to learn how to use it)
+- Added custom capabilities for responding to reviews (`respond_to_site-review` and `respond_to_others_site-review`)
+- Added filters for categories, assigned posts, and assigned users on the "All Reviews" admin page (enable them in the "Screen Options" on the top-right of the page)
+- Added native Elementor widgets
+- Added support for <optgroup> in dropdown fields (this may be useful when using the Review Forms addon to display a category dropdown with parent/child categories). To learn how to enable this, please see the FAQ Help page.
+- Added the `glsr_update_review` helper function (see the provided documentation to learn how to use it)
+- Added the ability to create reviews from the admin
+- Added the ability to respond to reviews from the "All Reviews" page
+- Added the `site-reviews/review/build/tag/response/by` hook (see the FAQ to learn how to use it to change the name in the response)
+- Fixed inline styles (overriding the star images should now display correctly in the block editor)
+- Fixed summary review counts for 0-star ratings
+- Fixed the star rating when resetting the submission form where a default rating is set
+
+= 5.10.4 (2021-05-03) =
+
+- Fixed date validation in the "Import Third Party Reviews" tool
+
+= 5.10.3 (2021-04-28) =
+
+- Fixed the assigned_posts meta keys which store the average rating, ranking, and review count
+
+= 5.10.2 (2021-04-27) =
+
+- Fixed the missing "terms" database column error for users who have not run the plugin migration from previous versions
+
+= 5.10.1 (2021-04-26) =
+
+- Fixed the missing "terms" database column error for users who updated a fresh install of Site Reviews v5.9 to v5.10
+
+= 5.10.0 (2021-04-26) =
+
+- Added delimiter and date format options in the "Import third party reviews" tool
+- Fixed the missing "terms" database column in a fresh install of Site Reviews
+
+= 5.9.0 (2021-04-24) =
+
+- Added a "Compatibility Issues" section to the Help page to document incompatible plugins along with possible workarounds.
+- Added a "terms" option to the shortcodes which allow you to only display reviews where the terms field was accepted in the form. All reviews that were submitted before this update will have their terms set as accepted.
+- Fixed database foreign table constraints
+- Fixed settings tabs on touch devices
+- Improved the Tools page
+
+= 5.8.5 (2021-04-17) =
+
+- Fixed anonymous reviews from inheriting the author ID of the logged in user after being edited
+
+= 5.8.4 (2021-04-15) =
+
+- Fixed a potential problem introduced by the previous widget compatibility fix
+
+= 5.8.3 (2021-04-12) =
+
+- Fixed widget compatibility with page builder plugins
+
+= 5.8.2 (2021-04-03) =
+
+- Fixed javascript event system
+- Fixed the FAQ javascript example of hiding the form after a review submission
+
+= 5.8.1 (2021-03-28) =
+
+- Fixed database versioning
+- Fixed internal unique array logic
+
+= 5.8.0 (2021-03-05) =
+
+- Added setting tooltips
+- Fixed compatibility with the Thrive Architect plugin
+- Fixed compatibility with the WP Rocket plugin
+- Fixed modal styles
+- Optimised settings
+- Updated documentation
+
+= 5.7.4 (2021-03-02) =
+
+- Fixed review star CSS
+
+= 5.7.3 (2021-02-24) =
+
+- Fixed compatibility with Elementor Pro popups
+- Fixed compatibility with SG Optimiser
+- Fixed compatibility with WPForms
+- Fixed the toggle alignment in the "Minimal" plugin style
+- Fixed validation event listeners
+
+= 5.7.2 (2021-02-18) =
+
+- Fixed support for PHP compiled without a built-in ctype extension (i.e. FreeBSD servers)
+
+= 5.7.0 (2021-02-16) =
+
+- Added a custom Event Emitter which will allow you to manually initialise the Site Reviews javascript after the DOMContentLoaded event has fired or from Popup events (see: [EVENTS.md](https://github.com/pryley/site-reviews/blob/main/EVENTS.md).
+- Added documentation on troubleshooting problems with the review form (see the "Common Problems and Solutions" section on the Help page).
+- Added the "Optimise Your Database Tables" tool which allows you to convert tables from MyISAM to InnoDB for better performance.
+- Improved the excerpt and pagination scripts.
+
+= 5.6.2 (2021-02-09) =
+
+- Added the "Review Themes" addon, premium members may request early access to try out the beta.
+- Fixed the FAQ for hiding the form after submission.
+
+= 5.6.1 (2021-02-05) =
+
+- Fixed the star rating field on touch devices
+
+= 5.6.0 (2021-02-04) =
+
+- Added an option to display excerpted reviews in a modal
+- Fixed assigned ranking meta when reviews are manually approved/unapproved
+- Fixed imported reviews losing their submission date when approved/unapproved
+- Fixed incorrect triggering of the rating validation after a form submission
+- Fixed translation bug with htmlentities
+- Fixed paragraph word wrapping in reviews
+
+= 5.5.2 (2021-01-29) =
+
+- Fixed browser support for star-ratings.js
+
+= 5.5.1 (2021-01-26) =
+
+- Added the missing "What's New" sections
+
+= 5.5.0 (2021-01-26) =
+
+- Added "data-field" attribute to form fields; this should make it easier to build custom CSS layouts
+- Added "date", "user__in", and "user__not_in" parameters to the glsr_get_reviews() function
+- Added glsr_trace() helper function
+- Added plugin style for the "Twenty Twenty-One" theme
+- Added "Restrict Limits To" setting which allows you to choose which assignments are used in the review limits.
+- Added sub-sections for addon settings
+- Changed the "site-reviews/review/build/<tag>" hooks to "site-reviews/review/build/tag/<tag>"
+- Fixed CSV importing when header values contain trailing spaces
+- Fixed email and IP address review limits to include all reviews (not just approved reviews)
+- Upgraded star-ratings.js library to v4 in preparation for the "Review Themes" addon
+
+= 5.4.3 (2021-01-16) =
+
+- Fixed Add-on support notice
+- Fixed Migration support for PHP 8.0 Named Arguments
+
+= 5.4.2 (2020-12-26) =
+
+- Fixed line breaks in excerpts
+
+= 5.4.1 (2020-12-24) =
+
+- Fixed links in review responses to allow the "rel" attribute
+- Happy Holidays! 🎄✨🍾
+
+= 5.4.0 (2020-12-22) =
+
+- Added the "schema_identifier" meta key which can be used to set a custom '@id' schema property with the Custom Fields metabox
+- Added the "Woocommerce Reviews" addon
+- Fixed a PHP 8 error with the schema
+- Fixed setting fields to use escaped HTML attributes
+
+= 5.3.5 (2020-12-16) =
+
+- Fixed template tag substitution in custom review templates
+
+= 5.3.4 (2020-12-16) =
+
+- Fixed pagination to use the saved "hide" options
+- Fixed the import tool, it no longer substitutes empty review name/email fields with those of the logged in user
+
+= 5.3.3 (2020-12-14) =
+
+- Fixed addon updater
+
+= 5.3.2 (2020-12-13) =
+
+- Added "Site Reviews Premium"
+- Added "Review Forms" addon
+- Added debug logging for validation errors
+- Added error logging for database table creation errors
+- Added support for PHP 8
+- Added the Category and Review IDs to the action row in the admin tables
+- Added the {{ assigned_posts }}, {{ assigned_users }}, and {{ assigned_terms }} template tags
+- Fixed block attributes
+- Fixed line-breaks in review excerpts
+- Fixed pagination URLs for servers that do not use REQUEST_URI
+- Fixed support for older custom fields using assign_to/category as names
+- Fixed the Backtrace used when logging entries to the Console
+- Fixed the Console on sites that have been duplicated but still have the upload dir cached to the old path
+- Improved the block options
+- Improved the documentation
+- Improved the System Info
+
+= 5.2.3 (2020-11-30) =
+
+- Fixed the PHP multibyte fallback when the iconv extension is missing
+
+= 5.2.2 (2020-11-17) =
+
+- Fixed shortcode examples in documentation; Copy/pasting a shortcode example into the classic editor will now paste as plain text instead of as HTML code.
+- Fixed System Info details to always be in English
+
+= 5.2.1 (2020-11-15) =
+
+- Fixed MariaDB support (removed subqueries from the SQL)
+- Fixed migration of imported settings
+- Fixed the "post__in" and "post__not_in" options of the glsr_get_reviews() helper function
+
+= 5.2.0 (2020-11-06) =
+
+- Added Notification Template tags for assigned categories, posts, and users
+- Added Review Assignment setting
+- Changed review assignment in SQL queries to use strict assignments by default (it was previously using loose assignments, use the new "Review Assignment" setting to change this back)
+- Changed the glsr_create_review function to log validation errors to the plugin console
+- Fixed Bulk Editing of reviews that are assigned to post types or users
+- Fixed Multibyte String support
+- Fixed Multisite compatibility
+- Fixed pagination URLs when used on the homepage
+- Fixed rating validation when using a custom maximum rating value
+- Fixed review limits validation for assigned reviews
+- Fixed review migration of invalid 3rd-party reviews (reviews that were previously imported incorrectly)
+- Fixed review name and email fallback values to use those of the logged-in user
+- Fixed the submission date of reviews, it now uses the timezone offset in the WordPress settings
+
+= 5.1.6 (2020-10-25) =
+
+- Fixed compatibility issue with the Elementor Pro Popups
+- Fixed the glsr_create_review helper function validation
+
+= 5.1.4 (2020-10-25) =
+
+- Fixed addons notice styling and placement
+- Fixed plugin file paths on IIS Windows servers
+- Fixed plugin migrations to work better with the W3 Total Cache plugin
+- Fixed strict standard notices in PHP 5.6
+
+= 5.1.0 (2020-10-24) =
+
+- Fixed database integration with WordPress tables that still use the old MyISAM engine
+- Fixed the submission date of reviews to account for the timezone
+- Improved the plugin migration notice
+
+= 5.0.3 (2020-10-23) =
+
+- Added back the deprecated "count" option on the [site_reviews] shortcode so that it will still work for people who have not yet replaced it with the "display" option.
+- Fixed a regression which prevented translations from including a link (i.e. the terms toggle)
+- Fixed the terms toggle validation
+- Fixed the trustalyze addon link
+
+= 5.0.0 (2020-10-22) =
+
+- Added "Delete data on uninstall" option to selectively delete plugin data when removing the plugin
+- Added "Send Emails From" option to send notifications from a custom email address
+- Added a loading="lazy" attribute to avatar images
+- Added a new Review Details metabox which allows you to modify review values
+- Added a tool to import 3rd-party reviews
+- Added a tool to test IP address detection
+- Added assigned_posts shortcode option, this replaces the "assign_to" and "assigned_to" options and allows you to assign reviews to multiple Post IDs
+- Added assigned_terms shortcode option, this replaces the "category" option and allows you to assign reviews to multiple Categories
+- Added assigned_users shortcode option, this allows you to assign reviews to multiple User IDs
+- Added [suggested privacy policy content](https://wordpress.org/support/article/wordpress-privacy/#privacy-policy-editing-helper)
+- Added the submitted review to the "site-reviews/after/submission" javascript event
+- Added [WordPress Personal Data Eraser](https://wordpress.org/support/article/wordpress-privacy/#erase-personal-data-tool) integration
+- Added [WordPress Personal Data Exporter](https://wordpress.org/support/article/wordpress-privacy/#export-personal-data-tool) integration
+- Added [WordPress Revision](https://wordpress.org/support/article/revisions/) integration
+- Changed the assigned_to hide option to assigned_links (i.e. [site_reviews hide="assigned_links"])
+- Changed the minimum PHP version to 5.6.20
+- Changed the minimum WordPress version to 5.5
+- Changed the review limit validation to perform strict checking for assigned posts, categories and users (AND instead of OR)
+- Changed the settings to use the WordPress "Disallowed Comment Keys" option by default
+- Changed the "site-reviews/rating/average" filter hook argument order (see the Upgrade Guide on the Site Reviews welcome page)
+- Fixed compatibility with the Divi theme and Divi Builder plugin
+- Fixed compatibility with the Elementor Pro plugin popups
+- Fixed compatibility with the GeneratePress Premium plugin
+- Fixed compatibility with the Hummingbird Performance plugin
+- Fixed compatibility with the Members plugin
+- Fixed compatibility with the WP-Optimize plugin
+- Fixed compatibility with the WP Super Cache plugin
+- Fixed the review summary bars in IE11
+- Fixed Welcome page permissions
+- Improved console logging
+- Improved documentation
+- Improved plugin performance with thousands of reviews
+- Improved the blocks to visually match the WordPress 5.5 editor style
+- Improved the Terms checkbox in the review form to align correctly with the text
+- Improved translation settings
+- Refreshed the stars SVG images
+- Removed the deprecated "count" option from the [site_reviews] ahortcode (use the "display" option instead).
+- Removed the "site-reviews/config/forms/submission-form" filter hook (see the Upgrade Guide on the Welcome page)
+- Removed the "site-reviews/reviews/reviews-wrapper" filter hook (see the Upgrade Guide on the Welcome page)
+- Removed the "site-reviews/submission-form/order" filter hook (see the Upgrade Guide on the Welcome page)
+- Removed the glsr_calculate_ratings() helper function
+- Removed the Trustalyze integration, it is now an addon
+- Removed tool to calculate rating counts (no longer needed)
+- Renamed the glsr_get_rating() helper function to glsr_get_ratings()
+- Replaced the assign_to and assigned_to shortcode options with the assigned_posts option
+- Replaced the category shortcode option with "assigned_terms" option
+- Site Reviews now uses custom database tables, however you may still use the WordPress Export/Import tools as before
+- The Translations Settings search results are now restricted to public text that is actually shown on your website, if you would like to change plugin text shown in the WordPress admin, you should use the Loco Translate plugin instead

@@ -321,3 +321,64 @@ function custom_usp_shortcode_function() {
     return $output;
 }
 add_shortcode('custom_usp_shortcode', 'custom_usp_shortcode_function');
+
+/* ------------------------------------------- */
+
+function custom_details_shortcode_function() {
+    $output = '<div class="custom-details-wrapper">';
+
+    // Screen section
+    $output .= '<h3 class="details_title">Screen</h3>'; 
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">Screen diagonal</p>'; 
+    $output .= '<p class="p_element_2">6.7"</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">The screen resolution</p>'; 
+    $output .= '<p class="p_element_2">2796x1290</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">The screen refresh rate</p>'; 
+    $output .= '<p class="p_element_2">120 Hz</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">The pixel density</p>'; 
+    $output .= '<p class="p_element_2">460 ppi</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">Screen type</p>'; 
+    $output .= '<p class="p_element_2">OLED</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<div class="p_element_left">Additionally</div>'; 
+    $output .= '<div class="p_element_wrapp">'; 
+    $output .= '<p class="p_element_2">Dynamic Island</p>'; 
+    $output .= '<p class="p_element_2">Always-On display</p>'; 
+    $output .= '<p class="p_element_2">HDR display</p>'; 
+    $output .= '<p class="p_element_2">True Tone</p>'; 
+    $output .= '<p class="p_element_2">Wide color (P3)</p>'; 
+    $output .= '</div>';
+    $output .= '</div>';
+
+    // CPU section
+    $output .= '<h3 class="details_title">CPU</h3>'; 
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">CPU</p>'; 
+    $output .= '<p class="p_element_2">A16 Bionic</p>'; 
+    $output .= '</div>';
+
+    $output .= '<div class="custom-detail-item">';
+    $output .= '<p class="p_element">Number of cores</p>'; 
+    $output .= '<p class="p_element_2">6</p>'; 
+    $output .= '</div>';
+
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('custom_details_shortcode', 'custom_details_shortcode_function');

@@ -52,6 +52,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_review_meta', $comment );
 
 			do_action( 'woocommerce_review_before_comment_text', $comment );
+			
+			
+            /**
+             * Replace numeric rating with star images
+             */
+            $rating = intval(get_comment_meta($comment->comment_ID, 'rating', true)); // Get the rating
+            if ($rating > 0) {
+                // Output full star images based on the rating
+                for ($i = 1; $i <= $rating; $i++) {
+                    echo '<img src=" '. get_template_directory_uri() .'/resources/images/full_star.png" alt="Full Star">';
+                }
+                // Output empty star images for the remaining rating
+                for ($i = $rating + 1; $i <= 5; $i++) {
+                    echo '<img src="'. get_template_directory_uri() .'/resources/images/empty_star.png" alt="Empty Star">';
+                }
+            }
+            
 
 			/**
 			 * The woocommerce_review_comment_text hook

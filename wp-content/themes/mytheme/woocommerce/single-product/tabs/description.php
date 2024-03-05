@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 global $post;
 
-$heading = apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) );
+$heading = apply_filters( 'woocommerce_product_description_heading', __( 'Details', 'woocommerce' ) );
 
 ?>
 
@@ -27,4 +27,12 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 	<h2><?php echo esc_html( $heading ); ?></h2>
 <?php endif; ?>
 
-<?php the_content(); ?>
+<?php the_content();
+// Include single-product-reviews.php
+get_template_part( 'single-product-reviews' );
+
+?>
+<!-- Display product reviews -->
+<div class="product-reviews">
+            <?php comments_template(); ?>
+        </div>
