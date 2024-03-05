@@ -313,7 +313,15 @@ div.woocommerce-checkout:contains("Checkout") {
           .wc_payment_method.payment_method_stripe input {
             position: absolute;
             top: 0;
-            right: 3%;
+            right: 30%;
+          }
+
+          .wc_payment_method.payment_method_stripe
+            label[for="payment_method_stripe"]:hover {
+            color: #545454;
+          }
+          .wc_payment_method.payment_method_cod:hover {
+            color: #545454;
           }
 
           li {
@@ -401,6 +409,7 @@ div.woocommerce-checkout:contains("Checkout") {
         border: 1px solid #000000;
         background-color: #000000;
         margin-top: 10%;
+        margin-bottom: 5%;
       }
     }
   }
