@@ -51,7 +51,7 @@ add_filter('woocommerce_breadcrumb_defaults', 'custom_change_breadcrumb_separato
 
     
 
-// Change text pon Home page on Add ti cart btn
+// Change text pon Home page on Add to cart btn
 add_filter( 'woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text' );
 
 function custom_add_to_cart_text( $text ) {
@@ -219,7 +219,12 @@ $percentage_distribution = array();
 
 $color = 'color: #FFB547;';
 foreach ($rating_counts as $rating => $count) {
-    $percentage = ($count / $review_count) * 100;
+    if ($review_count != 0) {
+        $percentage = ($count / $review_count) * 100;
+    } else {
+        // If $review_count is zero, set percentage to zero to avoid error
+        $percentage = 0;
+    }
     $percentage_distribution[$rating] = round($percentage, 2);
 
     $class = 'bar';
