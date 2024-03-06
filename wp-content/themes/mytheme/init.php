@@ -1,4 +1,5 @@
 <?php
+require_once('ajax.php');
 require_once('settings.php');
 require_once('shortcodes.php');
 require_once('hooks.php');
@@ -22,4 +23,5 @@ function mytheme_init(){
 register_nav_menus($menus);
 }
 add_action('after_setup_theme', 'mytheme_init');
+
 

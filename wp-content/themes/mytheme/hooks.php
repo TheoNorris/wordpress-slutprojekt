@@ -318,3 +318,8 @@ function replace_select_options_text( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'replace_select_options_text', 20, 3 );
 
+// For authenticated users
+add_action("wp_ajax_mytheme_getbyajax", "mytheme_getbyajax");
+
+// For non-authenticated users
+add_action("wp_ajax_nopriv_mytheme_getbyajax", "mytheme_getbyajax");

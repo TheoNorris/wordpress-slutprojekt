@@ -239,6 +239,24 @@
               }
             }
           }
+          .woocommerce-pagination {
+            display: none;
+          }
+        }
+        .button-div {
+          width: 100%;
+          text-align: center;
+          #load-more-btn {
+            font-size: 16px;
+            font-size: 500;
+            border-radius: 6px;
+            padding: 20px;
+            width: 200px;
+            border: 1px solid #000000;
+            background-color: #000000;
+            margin: 0 auto 5%;
+            color: white;
+          }
         }
       }
     }

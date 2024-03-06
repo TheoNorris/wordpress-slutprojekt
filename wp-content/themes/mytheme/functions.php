@@ -4,7 +4,7 @@ if(!defined('ABSPATH')){
     exit;
 }
 require_once('vite.php');
-require_once('ajax.php');
+
 //initialize theme
 require_once(get_template_directory() . '/init.php');
 
