@@ -170,6 +170,7 @@
               background-color: #f6f6f6;
               border-radius: 9px;
               width: calc(31% - 12px);
+              position: relative;
 
               .added_to_cart {
                 color: #000000;
@@ -190,16 +191,40 @@
                   color: $primary_text_color;
                   text-align: center;
                   margin: 20px 10px;
+                  height: 50px;
                 }
                 .star-rating {
                   span {
                     display: none;
                   }
                 }
+                .price {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  ins span {
+                    color: rgb(255 26 26);
+                    margin-left: 5px;
+                  }
+                  del span {
+                    font-size: 14px;
+                    text-decoration: line-through;
+                    width: 110%;
+                  }
+                }
                 .woocommerce-product-rating {
                   display: flex;
                   justify-content: center;
                   margin-bottom: 20px;
+                }
+                .onsale {
+                  display: block;
+                  position: absolute;
+                  top: 4%;
+                  left: 8%;
+                  font-weight: 600;
+                  color: rgb(255 26 26);
+                  letter-spacing: 1px;
                 }
               }
               .product_type_simple {
@@ -228,14 +253,6 @@
                 font-size: 24px;
                 font-weight: 600;
                 color: $primary_text_color;
-              }
-              .price .sale {
-                del span {
-                  color: rgb(244, 48, 48);
-                }
-                ins {
-                  display: none;
-                }
               }
             }
           }

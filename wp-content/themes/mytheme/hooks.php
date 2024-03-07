@@ -302,19 +302,6 @@ function add_custom_rating_pro() {
     }
 }
 
-add_filter( 'woocommerce_get_price_html', 'display_sale_price_with_red_color', 10, 2 );
-
-function display_sale_price_with_red_color( $price_html, $product ) {
-    if ( $product->is_on_sale() ) {
-        $sale_price_html = wc_format_sale_price( wc_get_price_to_display( $product, array( 'price' => $product->get_sale_price() ) ), wc_get_price_to_display( $product ) ) . $product->get_price_suffix();
-        // Add inline CSS to color the sale price red
-        $sale_price_html = '<span class="sale">' . $sale_price_html . '</span>';
-        return $sale_price_html;
-    }
-
-    return $price_html;
-}
-
 function replace_select_options_text( $translated_text, $text, $domain ) {
     if ( 'woocommerce' === $domain && 'Select options' === $text ) {
         $translated_text = 'Buy Now';
@@ -322,12 +309,6 @@ function replace_select_options_text( $translated_text, $text, $domain ) {
     return $translated_text;
 }
 add_filter( 'gettext', 'replace_select_options_text', 20, 3 );
-
-// For authenticated users
-add_action("wp_ajax_mytheme_getbyajax", "mytheme_getbyajax");
-
-// For non-authenticated users
-add_action("wp_ajax_nopriv_mytheme_getbyajax", "mytheme_getbyajax");
 
 function mytheme_modify_shop_products_per_page( $query ) {
     if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
