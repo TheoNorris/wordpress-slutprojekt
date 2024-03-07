@@ -55,7 +55,7 @@ function mytheme_getbyajax() {
     wp_reset_postdata();
 
     if (empty($products_html)) {
-        echo 'No more products';
+        echo '<p class="nomore-p nomore-products">No more products</p>';
     } else {
         echo $products_html;
     }
