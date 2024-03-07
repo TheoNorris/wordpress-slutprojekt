@@ -328,3 +328,10 @@ add_action("wp_ajax_mytheme_getbyajax", "mytheme_getbyajax");
 
 // For non-authenticated users
 add_action("wp_ajax_nopriv_mytheme_getbyajax", "mytheme_getbyajax");
+
+function mytheme_modify_shop_products_per_page( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
+        $query->set( 'posts_per_page', 9 ); // Set the number of products to display per page
+    }
+}
+add_action( 'pre_get_posts', 'mytheme_modify_shop_products_per_page' );

@@ -21,34 +21,44 @@ function mytheme_enqueue_scripts(){
 }
 
 
-function mytheme_getbyajax(){
+function mytheme_getbyajax() {
     // Check nonce and permissions
     check_ajax_referer('mytheme_ajax_nonce', 'nonce');
 
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1; // Get the page number from the AJAX request
 
-    // Modify the query args to fetch the products for the requested page
+    // Calculate the offset to start from the 10th product
+    $offset = ($page - 1) * 9 + 9; // Start from the 10th product
+
+    // Modify the query args to fetch the products starting from the 10th
     $args = array(
-        'post_type' => 'product',
-        'posts_per_page' => 16, // Adjust as needed
-        'paged' => $page,
+        'post_type'      => 'product',
+        'posts_per_page' => 9, // Adjust as needed
+        'orderby'        => 'date',
+        'order'          => 'ASC',
+        'offset'         => $offset, // Start from the 10th product
     );
 
-    $query = new WP_Query( $args );
+    $query = new WP_Query($args);
 
     $products_html = '';
 
-    if ( $query->have_posts() ) {
+    if ($query->have_posts()) {
         ob_start();
-        while ( $query->have_posts() ) {
+        while ($query->have_posts()) {
             $query->the_post();
-            wc_get_template_part( 'content', 'product' ); // Output the product template
+            wc_get_template_part('content', 'product'); // Output the product template
         }
         $products_html = ob_get_clean();
     }
 
     wp_reset_postdata();
 
-    echo $products_html;
+    if (empty($products_html)) {
+        echo 'No more products';
+    } else {
+        echo $products_html;
+    }
+    
     wp_die(); // Always include this to terminate the script properly
 }

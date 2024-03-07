@@ -24,6 +24,14 @@ function enqueue_woocommerce_scripts() {
     }
 }
 
+function mytheme_modify_shop_query($query) {
+    if (is_shop() && $query->is_main_query()) {
+        $query->set('orderby', 'date');
+        $query->set('order', 'ASC');
+    }
+}
+add_action('pre_get_posts', 'mytheme_modify_shop_query');
+
 
 
 
