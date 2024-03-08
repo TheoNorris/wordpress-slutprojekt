@@ -441,10 +441,17 @@ div.woocommerce-checkout:contains("Checkout") {
       background-color: #fff;
       color: #000000;
       border: 1px solid #000000;
+      margin-right: 0.4% !important;
     }
   }
 }
 
 #wc-stripe-cc-form .StripeElement {
   padding: 10px !important;
+}
+
+.selected {
+  border-bottom: 2px solid black;
+  text-align: center;
+  width: 110px;
 }

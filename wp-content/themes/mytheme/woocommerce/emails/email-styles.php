@@ -93,7 +93,7 @@ body {
     left: 30px;
     width: 100px;
     height: 50px; 
-    background-image: url('http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/Logo-Vector-1.png');
+    background-image: url('http://wordpress-slutprojekt.test/wp-content/uploads/2024/03/Logo-Vector.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -115,6 +115,9 @@ body {
 #template_header_image img {
 	margin-left: 0;
 	margin-right: 0;
+	position: absolute;
+	top: 10%;
+	left: 10%;
 }
 
 #template_footer td {
