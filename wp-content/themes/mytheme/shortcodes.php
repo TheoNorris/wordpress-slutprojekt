@@ -22,7 +22,6 @@ function custom_woocommerce_category_subheader_navigation() {
                 // Get category thumbnail
                 $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
                 $image = wp_get_attachment_url( $thumbnail_id );
-
                 // Output category with thumbnail
                 $output .= '<li><img src="' . $image . '" alt="' . $category->name . '">';
                 $output .= '<a href="' . get_term_link($category) . '">' . $category->name . '</a></li>';
@@ -37,25 +36,6 @@ function custom_woocommerce_category_subheader_navigation() {
     return $output;
 }
 add_shortcode('woocommerce_category_subheader_navigation', 'custom_woocommerce_category_subheader_navigation');
-
-
-/* function hero_section_shortcode($atts, $content = null) {
-    return '<section class="small-banners">' . do_shortcode($content) . '</section>';
-}
-add_shortcode('section', 'hero_section_shortcode');
-
-
-function left_section_shortcode($atts, $content = null) {
-    return '<section class="left">' . do_shortcode($content) . '</section>';
-}
-add_shortcode('left_section', 'left_section_shortcode');
-
-function playstation_shortcode($atts, $content = null) {
-    return '<div class="play">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('playstation', 'playstation_shortcode');
- */
-
  
 // Define the shortcode function
 function custom_div_structure_shortcode($atts, $content = null) {
