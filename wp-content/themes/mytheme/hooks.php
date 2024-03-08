@@ -13,20 +13,10 @@ function woocommerce_button_proceed_to_checkout() {
 <?php
 }
 
-/* //removes shipping 
-    add_filter( 'woocommerce_cart_needs_shipping', 'filter_cart_needs_shipping' );
-    function filter_cart_needs_shipping( $needs_shipping ) {
-        if ( is_cart() ) {
-            $needs_shipping = false;
-        }
-        return $needs_shipping;
-    } */
-
 
 // Hook för att lägga till beräknad skatt i kundvagnen och kassan
 add_action( 'woocommerce_cart_totals_before_shipping', 'display_estimated_tax', 20 );
-/* add_action( 'woocommerce_review_order_before_order_total', 'display_estimated_tax', 20 );
- */
+
 function display_estimated_tax() {
     $cart_tax = WC()->cart->get_cart_contents_tax();
     if ( $cart_tax > 0 ) {
@@ -51,7 +41,7 @@ add_filter('woocommerce_breadcrumb_defaults', 'custom_change_breadcrumb_separato
 
     
 
-// Change text pon Home page on Add to cart btn
+// Change text on Home page on Add to cart btn
 add_filter( 'woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text' );
 
 function custom_add_to_cart_text( $text ) {
@@ -62,10 +52,8 @@ function custom_add_to_cart_text( $text ) {
 }
 
 function modify_shipping_method_full_label($full_label, $method) {
-    // Modify the full label text as needed
     $modified_full_label = str_replace(':', '', $full_label);
-    
-    // Return the modified full label
+
     return $modified_full_label;
 }
 
@@ -130,7 +118,7 @@ function move_short_description_after_variations() {
     
     // Kontrollera om det är en variabel produkt
     if ($product && $product->is_type('variable')) {
-        // Output the short description
+       
         wc_get_template('single-product/short-description.php');
     }
 }
@@ -208,17 +196,17 @@ function display_review_statistics_with_bars_labels_and_stars() {
     echo '</div>';
     // Rating bars
     echo '<ul class="rating-bars">';
-$rating_counts = array(
+    $rating_counts = array(
     5 => $product->get_rating_count(5),
     4 => $product->get_rating_count(4),
     3 => $product->get_rating_count(3),
     2 => $product->get_rating_count(2),
     1 => $product->get_rating_count(1)
-);
-$percentage_distribution = array();
+    );
+    $percentage_distribution = array();
 
-$color = 'color: #FFB547;';
-foreach ($rating_counts as $rating => $count) {
+    $color = 'color: #FFB547;';
+    foreach ($rating_counts as $rating => $count) {
     if ($review_count != 0) {
         $percentage = ($count / $review_count) * 100;
     } else {
@@ -251,8 +239,6 @@ foreach ($rating_counts as $rating => $count) {
         $filled = $color . ' width: 50%;';
     }
     echo '<li class="' . $class . '">';
-
-    // Adjusting the width of the outer <div> to accommodate the text label and the bar
     echo '<div style="width:20%; display: inline-block;">';
     echo $label;
     echo '</div>';
@@ -267,8 +253,7 @@ foreach ($rating_counts as $rating => $count) {
     echo '</li>';
     
 }
-echo '</ul>';
-
+    echo '</ul>';
     echo '</div>'; // Close review-statistics div
 }
 
@@ -316,3 +301,14 @@ function mytheme_modify_shop_products_per_page( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'mytheme_modify_shop_products_per_page' );
+
+/* ------------------------------------------------------------------------ */
+// Change text on Home page on Add to cart btn
+add_filter( 'woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text_on_related_products' );
+
+function custom_add_to_cart_text_on_related_products( $text ) {
+    if ( is_product() && $text === 'Add to cart' ) {     
+        $text = 'Buy Now';
+    }
+    return $text;
+}
